@@ -3,6 +3,7 @@
 真正可执行、可验证、可恢复的 Codex Desktop 换肤 Skill，不是把效果图贴进窗口里冒充主题。
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827)](skills/codex-dream-skin/SKILL.md)
+[![Skill CI](https://github.com/aithink001/Codex-Dream-Skin-Themes/actions/workflows/skill-ci.yml/badge.svg)](https://github.com/aithink001/Codex-Dream-Skin-Themes/actions/workflows/skill-ci.yml)
 [![macOS](https://img.shields.io/badge/macOS-supported-22c55e)](#实际支持范围)
 [![Windows](https://img.shields.io/badge/Windows-supported-2563eb)](#实际支持范围)
 [![Images](https://img.shields.io/badge/showcase_images-CDN-7c3aed)](#效果参考)
@@ -73,9 +74,21 @@ Codex Skill
 | 运行 Verify | ✅ | ✅ |
 | 输出实机验证截图 | ✅ | ✅ |
 | 使用自定义 Banner | ✅ | 暂不承诺 |
+| 保存主题库并快速切换 | ✅ | — |
+| 查看状态 / 暂停后恢复 | ✅ | — |
+| SwiftBar 菜单栏控制 | ✅ | — |
+| Renderer reload 后重新注入验证 | ✅ | 手动验收 |
+| 自定义调试端口 | ✅ | ✅ |
+| 前台 Injector 诊断 | ✅ | ✅ |
+| 不创建快捷方式安装 | ✅ | ✅ |
+| 精确恢复安装前 config | — | ✅ |
+| 不重新打开 Codex 的恢复 | — | ✅ |
+| 构建客户 ZIP / 发布 ZIP | ✅ | — |
 | 恢复官方外观 | ✅ | ✅ |
 
 当前 Windows 运行时提供内置主题和安全恢复，但还没有与 macOS 同等级的任意图片定制流程。因此仓库不会写成“Windows 可随便换图”。
+
+完整命令、授权边界和验收标准见 [`SKILL.md`](skills/codex-dream-skin/SKILL.md)。其中 `start-authorized`、`restore-authorized` 和精确配置恢复只允许在用户明确授权后使用。
 
 ## 安全边界
 
@@ -156,8 +169,8 @@ Codex Skill
 ## 仓库内容
 
 - [`skills/codex-dream-skin/SKILL.md`](skills/codex-dream-skin/SKILL.md)：Codex 执行规范与验证规则。
-- [`skills/codex-dream-skin/scripts/dream-skin-macos.sh`](skills/codex-dream-skin/scripts/dream-skin-macos.sh)：macOS 安装、定制、启动、验证和恢复入口。
-- [`skills/codex-dream-skin/scripts/dream-skin-windows.ps1`](skills/codex-dream-skin/scripts/dream-skin-windows.ps1)：Windows 安装、启动、验证和恢复入口。
+- [`skills/codex-dream-skin/scripts/dream-skin-macos.sh`](skills/codex-dream-skin/scripts/dream-skin-macos.sh)：macOS 安装、定制、主题库、状态、暂停、菜单栏、验证、打包和恢复入口。
+- [`skills/codex-dream-skin/scripts/dream-skin-windows.ps1`](skills/codex-dream-skin/scripts/dream-skin-windows.ps1)：Windows 安装、启动、诊断、验证、精确配置恢复和卸载入口。
 - [`prompts/themes.json`](prompts/themes.json)：可机器读取的 Banner 风格提示词。
 
 ## 声明

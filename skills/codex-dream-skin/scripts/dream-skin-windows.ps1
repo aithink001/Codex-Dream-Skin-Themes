@@ -1,10 +1,14 @@
 [CmdletBinding()]
 param(
   [Parameter(Mandatory = $true)]
-  [ValidateSet('source', 'install', 'start', 'verify', 'restore', 'uninstall', 'test')]
+  [ValidateSet('source', 'install', 'start', 'start-authorized', 'verify', 'restore', 'restore-authorized', 'recover-config', 'uninstall', 'test')]
   [string]$Action,
   [int]$Port = 9335,
-  [string]$ScreenshotPath
+  [string]$ScreenshotPath,
+  [switch]$NoShortcuts,
+  [string]$ProfilePath,
+  [switch]$ForegroundInjector,
+  [switch]$NoRelaunch
 )
 
 $ErrorActionPreference = 'Stop'
@@ -64,10 +68,21 @@ switch ($Action) {
     Write-Host "Pinned Codex Dream Skin runtime ready: $UpstreamCommit"
   }
   'install' {
-    Invoke-RuntimeScript 'install-dream-skin.ps1' @('-Port', $Port)
+    $arguments = @('-Port', $Port)
+    if ($NoShortcuts) { $arguments += '-NoShortcuts' }
+    Invoke-RuntimeScript 'install-dream-skin.ps1' $arguments
   }
   'start' {
-    Invoke-RuntimeScript 'start-dream-skin.ps1' @('-Port', $Port, '-PromptRestart')
+    $arguments = @('-Port', $Port, '-PromptRestart')
+    if ($ProfilePath) { $arguments += @('-ProfilePath', $ProfilePath) }
+    if ($ForegroundInjector) { $arguments += '-ForegroundInjector' }
+    Invoke-RuntimeScript 'start-dream-skin.ps1' $arguments
+  }
+  'start-authorized' {
+    $arguments = @('-Port', $Port, '-RestartExisting')
+    if ($ProfilePath) { $arguments += @('-ProfilePath', $ProfilePath) }
+    if ($ForegroundInjector) { $arguments += '-ForegroundInjector' }
+    Invoke-RuntimeScript 'start-dream-skin.ps1' $arguments
   }
   'verify' {
     $arguments = @('-Port', $Port)
@@ -75,10 +90,24 @@ switch ($Action) {
     Invoke-RuntimeScript 'verify-dream-skin.ps1' $arguments
   }
   'restore' {
-    Invoke-RuntimeScript 'restore-dream-skin.ps1' @('-Port', $Port, '-RestoreBaseTheme', '-PromptRestart')
+    $arguments = @('-Port', $Port, '-RestoreBaseTheme', '-PromptRestart')
+    if ($NoRelaunch) { $arguments += '-NoRelaunch' }
+    Invoke-RuntimeScript 'restore-dream-skin.ps1' $arguments
+  }
+  'restore-authorized' {
+    $arguments = @('-Port', $Port, '-RestoreBaseTheme', '-ForceRestart')
+    if ($NoRelaunch) { $arguments += '-NoRelaunch' }
+    Invoke-RuntimeScript 'restore-dream-skin.ps1' $arguments
+  }
+  'recover-config' {
+    $arguments = @('-Port', $Port, '-RecoverConfigBackup', '-PromptRestart')
+    if ($NoRelaunch) { $arguments += '-NoRelaunch' }
+    Invoke-RuntimeScript 'restore-dream-skin.ps1' $arguments
   }
   'uninstall' {
-    Invoke-RuntimeScript 'restore-dream-skin.ps1' @('-Port', $Port, '-RestoreBaseTheme', '-PromptRestart', '-Uninstall')
+    $arguments = @('-Port', $Port, '-RestoreBaseTheme', '-PromptRestart', '-Uninstall')
+    if ($NoRelaunch) { $arguments += '-NoRelaunch' }
+    Invoke-RuntimeScript 'restore-dream-skin.ps1' $arguments
   }
   'test' {
     $testScript = Join-Path $SourceRoot 'windows\tests\run-tests.ps1'

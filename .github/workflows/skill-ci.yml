@@ -1,0 +1,68 @@
+name: Skill CI
+
+on:
+  push:
+    paths:
+      - ".github/workflows/skill-ci.yml"
+      - "skills/codex-dream-skin/**"
+  pull_request:
+    paths:
+      - ".github/workflows/skill-ci.yml"
+      - "skills/codex-dream-skin/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate skill metadata and repository assets
+        run: |
+          python -m pip install --quiet pyyaml
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          skill = Path("skills/codex-dream-skin/SKILL.md")
+          text = skill.read_text(encoding="utf-8")
+          assert text.startswith("---\n"), "SKILL.md must start with YAML frontmatter"
+          frontmatter = yaml.safe_load(text.split("---", 2)[1])
+          assert set(frontmatter) == {"name", "description"}
+          assert frontmatter["name"] == "codex-dream-skin"
+          assert frontmatter["description"].strip()
+
+          agent = yaml.safe_load(
+              Path("skills/codex-dream-skin/agents/openai.yaml").read_text(encoding="utf-8")
+          )
+          prompt = agent["interface"]["default_prompt"]
+          assert "$codex-dream-skin" in prompt
+
+          image_suffixes = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
+          images = [p for p in Path(".").rglob("*") if p.is_file() and p.suffix.lower() in image_suffixes]
+          assert not images, f"Images must stay on CDN, found: {images}"
+          PY
+
+  macos-wrapper:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse wrapper and verify pinned runtime source
+        run: |
+          bash -n skills/codex-dream-skin/scripts/dream-skin-macos.sh
+          CODEX_DREAM_SKIN_CACHE_DIR="$RUNNER_TEMP/codex-dream-skin" \
+            bash skills/codex-dream-skin/scripts/dream-skin-macos.sh source
+
+  windows-wrapper:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse wrapper and verify pinned runtime source
+        shell: powershell
+        env:
+          CODEX_DREAM_SKIN_CACHE_DIR: ${{ runner.temp }}\codex-dream-skin
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass -File `
+            skills\codex-dream-skin\scripts\dream-skin-windows.ps1 -Action source
