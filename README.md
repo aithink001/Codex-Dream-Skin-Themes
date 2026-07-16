@@ -1,124 +1,114 @@
 # Codex Dream Skin Themes
 
-8 张可以直接使用的超宽 Codex 主题背景，以及完整可复刻的 AI 提示词。
+8 套完整 Codex Dream Skin 换肤效果，以及可以继续生成原创 Banner 的风格提示词。
 
-[![Themes](https://img.shields.io/badge/themes-8-6d5dfc)](#主题预览)
-[![Resolution](https://img.shields.io/badge/resolution-2172%C3%97724-111827)](#图片规格)
-[![License](https://img.shields.io/badge/license-MIT-22c55e)](LICENSE)
+[![Showcases](https://img.shields.io/badge/showcases-8-7c3aed)](#完整效果预览)
+[![Prompts](https://img.shields.io/badge/prompts-ready-0ea5e9)](prompts/themes.json)
+[![Images](https://img.shields.io/badge/images-CDN-22c55e)](#素材说明)
 
-> **[在线生成自己的 Codex 主题背景](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=readme&utm_campaign=codex_dream_skin)**
->
-> 选择主题方向，修改颜色、氛围或视觉主体，生成新的超宽背景。
+> **[在线查看完整大图并生成自己的 Codex 主题](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=readme&utm_campaign=codex_dream_skin)**
 
-![Aurora Terminal](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/aurora-terminal.webp)
+![舞台黑金 Codex Dream Skin](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg)
 
 ## 这个仓库提供什么
 
-- 8 张无水印 PNG 主题背景
-- 每张尺寸均为 `2172 × 724`，比例 `3:1`
-- 深色、浅色、暖色和高对比主题
-- 对应的完整生成提示词
+- 8 套完整 Codex 界面效果参考
+- 粉系、财神、红白科幻、清透、ENFP、紫夜、虚拟歌姬和黑金方向
+- 每套对应一条可继续生成原创 Banner 的提示词
 - 可机器读取的 [`prompts/themes.json`](prompts/themes.json)
+- 所有图片均由独立 CDN 提供，仓库内不存放图片二进制
 
-这里只提供背景素材和提示词，不包含安装器，不修改应用文件，也不会更改任何 Codex 配置。
+这里不包含安装器，不修改应用文件，也不会更改任何 Codex 配置。在线生成器负责制作主题 Banner；具体换肤请使用你自己的 Codex 主题工作流。
 
-## 主题预览
+## 完整效果预览
 
-### Aurora Terminal / 极光终端
+### Pink Custom / 粉系定制
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/aurora-terminal.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=aurora-terminal&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=pink-custom&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Aurora Terminal](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/aurora-terminal.webp)
+![粉系定制](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg)
 
-### Porcelain Bloom / 瓷光花境
+### God of Wealth / 财神打工版
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/porcelain-bloom.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=porcelain-bloom&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/god-of-wealth.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=god-of-wealth&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Porcelain Bloom](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/porcelain-bloom.webp)
+![财神打工版](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/god-of-wealth.jpg)
 
-### Solar Forge / 曜金熔炉
+### Red-White Sci-Fi / 红白科幻
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/solar-forge.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=solar-forge&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/red-white-scifi.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=red-white-scifi&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Solar Forge](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/solar-forge.webp)
+![红白科幻](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/red-white-scifi.jpg)
 
-### Retro Future / 复古未来
+### Clear Custom / 清透定制
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/retro-future.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=retro-future&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/clear-custom.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=clear-custom&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Retro Future](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/retro-future.webp)
+![清透定制](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/clear-custom.jpg)
 
-### Jade Circuit / 翡翠回路
+### Inspiration Universe / 灵感小宇宙
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/jade-circuit.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=jade-circuit&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/inspiration-universe.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=inspiration-universe&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Jade Circuit](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/jade-circuit.webp)
+![灵感小宇宙](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/inspiration-universe.jpg)
 
-### Crimson Orbit / 赤红轨道
+### Purple Night / 紫夜限定
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/crimson-orbit.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=crimson-orbit&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/purple-night.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=purple-night&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Crimson Orbit](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/crimson-orbit.webp)
+![紫夜限定](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/purple-night.jpg)
 
-### Arctic Glass / 冰川玻璃
+### Miku Future / 初音未来
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/arctic-glass.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=arctic-glass&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/miku-future.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=miku-future&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Arctic Glass](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/arctic-glass.webp)
+![初音未来](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/miku-future.jpg)
 
-### Sunset Paper / 落日纸境
+### Stage Black-Gold / 舞台黑金
 
-[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/sunset-paper.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=sunset-paper&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[查看完整大图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg) · [生成同款风格](https://image3.org/zh/codex-dream-skin-generator?theme=stage-black-gold&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Sunset Paper](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/sunset-paper.webp)
+![舞台黑金](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg)
 
-## 图片规格
+## 从效果图生成自己的 Banner
 
-好的主题背景需要服务真实界面，而不是把整张假 UI 盖在窗口上。
-
-| 规则 | 建议 |
-| --- | --- |
-| 画布 | `2172 × 724` 或其他接近 `3:1` 的超宽尺寸 |
-| 左侧安全区 | 左侧约 38% 保持低细节、低干扰 |
-| 视觉焦点 | 主要光线、造型或主体放在右半区 |
-| 内容限制 | 不生成窗口、卡片、按钮、标签、Logo 和水印 |
-| 裁切 | 先生成 21:9，再按实际窗口裁成 3:1 |
-
-## 自己生成一套主题
-
-最快的方法是打开在线生成器：
-
-**https://image3.org/zh/codex-dream-skin-generator**
-
-或者从这个通用模板开始：
+完整效果图适合判断方向，但生成时不要把整套假 UI 画进背景。建议保留下面的结构：
 
 ```text
-Create a production-ready panoramic 3:1 desktop theme background.
-Keep the entire left 38 percent calm and low-detail for native interface titles.
-Place the main visual focus on the right half.
-Pure background artwork only: no UI, no windows, no cards, no people,
-no characters, no text, no letters, no logos, and no watermark.
-The image must remain usable when center-cropped.
+主题身份 + 视觉主体 + 主色和辅助色 + 装饰元素 + 情绪 + 超宽 Banner 构图
+
+Create a production-ready panoramic 3:1 Codex desktop theme banner.
+Keep the left side readable for native interface titles and place the main visual focus on the right half.
+Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text,
+no logos, and no watermark. The image must remain usable when center-cropped.
 ```
 
-在模板前面加上你想要的色彩、材质、氛围和主体即可。仓库中的全部提示词位于 [`prompts/themes.json`](prompts/themes.json)。
+仓库中的全部风格提示词位于 [`prompts/themes.json`](prompts/themes.json)。
+
+## 素材说明
+
+- 图片使用稳定 HTTPS CDN，不依赖 GitHub Raw。
+- 仓库不提交 JPG、PNG、WebP 等图片二进制。
+- 效果图用于视觉参考；人物肖像、角色形象或商标用于商业项目时，请先确认相应权利。
+- 更稳妥的商业用法是保留构图、配色和氛围，生成原创人物或原创角色。
 
 ## English
 
-This repository contains eight free, watermark-free, ultra-wide Codex theme backgrounds and the prompts used to create them.
+This repository contains eight complete Codex Dream Skin showcases and prompt directions for generating an original ultra-wide banner.
 
-- Resolution: `2172 × 724`
-- Aspect ratio: `3:1`
-- Quiet left-side safe zone
-- Right-weighted visual focus
-- Background art only — no fake UI
+- Complete full-interface references
+- CDN-hosted images; no image binaries in the repository
+- Machine-readable prompts in [`prompts/themes.json`](prompts/themes.json)
+- Online generator for original variations
 
 **[Create a custom Codex theme online](https://image3.org/codex-dream-skin-generator?utm_source=github&utm_medium=readme&utm_campaign=codex_dream_skin)**
 
+Showcase images are visual references. Confirm portrait, character, and trademark rights before commercial reuse.
+
 ## Contributing
 
-欢迎提交新的原创背景和提示词。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎提交新的原创方向和提示词。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## License
 
-MIT。详见 [LICENSE](LICENSE)。
+仓库中的代码和文本许可见 [LICENSE](LICENSE)。外部 CDN 效果图不随仓库许可证自动授权。

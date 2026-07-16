@@ -1,90 +1,82 @@
 [
   {
-    "id": "aurora-terminal",
-    "name": "Aurora Terminal",
-    "nameZh": "极光终端",
-    "appearance": "dark",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/aurora-terminal.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/aurora-terminal.webp",
-    "prompt": "An original dark aurora workspace atmosphere: deep midnight navy and graphite space, flowing electric-violet and cyan aurora ribbons, subtle glassy geometric portal forms, sparse stardust, premium cinematic abstract digital art, futuristic and quietly inspiring. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=aurora-terminal&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
-  },
-  {
-    "id": "porcelain-bloom",
-    "name": "Porcelain Bloom",
-    "nameZh": "瓷光花境",
+    "id": "pink-custom",
+    "name": "Pink Custom",
+    "nameZh": "粉系定制",
     "appearance": "light",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/porcelain-bloom.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/porcelain-bloom.webp",
-    "prompt": "An original light porcelain-garden atmosphere: warm ivory paper texture, translucent blush petals, delicate glass leaves, soft champagne-gold arcs, and a pearlescent abstract bloom, refined editorial illustration with subtle 3D glass details, bright and calm. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=porcelain-bloom&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+    "showcaseResolution": "1400x890",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg",
+    "prompt": "A romantic rose-pink celebrity fan theme banner, warm ivory base, soft editorial portrait of a stylish young woman on the right, pink roses, delicate floral line art, translucent blush panels, subtle handwritten decorative strokes, premium magazine design, tender and polished. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=pink-custom&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
   },
   {
-    "id": "solar-forge",
-    "name": "Solar Forge",
-    "nameZh": "曜金熔炉",
-    "appearance": "dark",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/solar-forge.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/solar-forge.webp",
-    "prompt": "An original black-gold solar-forge atmosphere: matte obsidian field, sculptural amber eclipse, fine molten-gold trajectories, subtle metallic particles, architectural light planes, luxury cinematic abstract art, focused and powerful. Avoid currency symbols and traditional motifs. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=solar-forge&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
-  },
-  {
-    "id": "retro-future",
-    "name": "Retro Future",
-    "nameZh": "复古未来",
+    "id": "god-of-wealth",
+    "name": "God of Wealth",
+    "nameZh": "财神打工版",
     "appearance": "light",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/retro-future.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/retro-future.webp",
-    "prompt": "An original optimistic retro-future laboratory landscape: warm cream backdrop, coral-red sun, mint and sky-blue translucent ribbons, small modular geometric forms, clean horizon glow, polished modernist illustration with subtle 3D materials, inventive and energetic. Avoid childish clip art. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=retro-future&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+    "showcaseResolution": "1400x787",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/god-of-wealth.jpg",
+    "prompt": "A playful Chinese prosperity coding theme banner, friendly God of Wealth mascot working on a laptop on the right, warm cream paper texture, festive red and gold, coins, lucky clouds, compact data dashboard motifs, witty startup energy, premium commercial illustration, celebratory but not cluttered. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=god-of-wealth&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
   },
   {
-    "id": "jade-circuit",
-    "name": "Jade Circuit",
-    "nameZh": "翡翠回路",
-    "appearance": "dark",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/jade-circuit.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/jade-circuit.webp",
-    "prompt": "An original emerald circuit garden: deep forest-black atmosphere, translucent jade glass planes, fine luminous green pathways, floating moss-like particles, one sculptural crystalline leaf formation, premium bio-digital abstract art, elegant and technical. Avoid literal circuit boards. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=jade-circuit&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
-  },
-  {
-    "id": "crimson-orbit",
-    "name": "Crimson Orbit",
-    "nameZh": "赤红轨道",
-    "appearance": "dark",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/crimson-orbit.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/crimson-orbit.webp",
-    "prompt": "An original crimson orbital architecture: deep charcoal field, glowing scarlet-red ring, satin red ribbons, subtle white light seams, minimal brushed-metal geometry, premium cinematic abstract art with Swiss-modern discipline, decisive and high-contrast. No flags or political symbols. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=crimson-orbit&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
-  },
-  {
-    "id": "arctic-glass",
-    "name": "Arctic Glass",
-    "nameZh": "冰川玻璃",
+    "id": "red-white-scifi",
+    "name": "Red-White Sci-Fi",
+    "nameZh": "红白科幻",
     "appearance": "light",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/arctic-glass.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/arctic-glass.webp",
-    "prompt": "An original arctic-glass horizon: pale ice-blue and pearl-gray atmosphere, translucent frozen arches, fine prismatic light, distant crystalline ridge, soft mist, refined architectural abstract render, clear and spacious. Avoid snowflakes and holiday motifs. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=arctic-glass&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+    "showcaseResolution": "1400x780",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/red-white-scifi.jpg",
+    "prompt": "A minimal red-and-white science-fiction theme banner, vast warm-white space, luminous scarlet sun on the right horizon, tiny silhouetted explorers, curved translucent red architecture, soft coral glow, precise product-design geometry, premium and optimistic. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=red-white-scifi&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
   },
   {
-    "id": "sunset-paper",
-    "name": "Sunset Paper",
-    "nameZh": "落日纸境",
+    "id": "clear-custom",
+    "name": "Clear Custom",
+    "nameZh": "清透定制",
     "appearance": "light",
-    "resolution": "2172x724",
-    "file": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/sunset-paper.png",
-    "preview": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/sunset-paper.webp",
-    "prompt": "An original sunset paper studio: muted terracotta, dusty rose, and warm sand layers shaped like folded-paper landscapes, one soft peach sun, fine ink-like contour lines, tactile editorial paper sculpture with subtle depth, warm and understated. Avoid craft clutter. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
-    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=sunset-paper&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+    "showcaseResolution": "1400x875",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/clear-custom.jpg",
+    "prompt": "A clear sage-green celebrity fan theme banner, warm ivory paper base, calm editorial portrait of a stylish young man on the right, fine botanical line art, postage-stamp details, pale green translucent layers, understated luxury magazine layout, soft natural light. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=clear-custom&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "inspiration-universe",
+    "name": "Inspiration Universe",
+    "nameZh": "灵感小宇宙",
+    "appearance": "light",
+    "showcaseResolution": "1400x787",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/inspiration-universe.jpg",
+    "prompt": "An energetic ENFP inspiration theme banner, cheerful illustrated young creator reaching forward on the right, mint green and warm orange, hand-drawn arrows, stars, stickers, playful productivity badges, sketchbook energy, polished youth editorial illustration, bright and optimistic. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=inspiration-universe&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "purple-night",
+    "name": "Purple Night",
+    "nameZh": "紫夜限定",
+    "appearance": "light",
+    "showcaseResolution": "1400x875",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/purple-night.jpg",
+    "prompt": "A glamorous electric-violet celebrity fan theme banner, elegant editorial portrait of a confident young woman on the right, sapphire and lilac glow, prismatic diamonds, delicate butterflies, star flares, translucent glass ribbons, premium beauty-campaign art, luminous and aspirational. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=purple-night&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "miku-future",
+    "name": "Miku Future",
+    "nameZh": "初音未来",
+    "appearance": "light",
+    "showcaseResolution": "1400x787",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/miku-future.jpg",
+    "prompt": "A cyan-and-pink virtual idol future theme banner, cheerful anime-inspired virtual singer with long turquoise twin tails on the right, floating music notes, hearts, holographic glass panels, soft rainbow glow, glossy Y2K accents, polished Japanese pop-tech illustration. Use an original character design. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=miku-future&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "stage-black-gold",
+    "name": "Stage Black-Gold",
+    "nameZh": "舞台黑金",
+    "appearance": "dark",
+    "showcaseResolution": "1400x875",
+    "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg",
+    "prompt": "A premium black-and-gold stage theme banner, editorial portrait of a stylish young male performer on the right, deep matte black, champagne-gold pin lights, flower silhouettes, subtle waveform, satin reflections, luxury concert-poster design, dramatic and restrained. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=stage-black-gold&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
   }
 ]
