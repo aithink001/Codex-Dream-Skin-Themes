@@ -18,7 +18,7 @@ jobs:
   metadata:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Validate skill metadata and repository assets
         run: |
           python -m pip install --quiet pyyaml
@@ -48,7 +48,7 @@ jobs:
   macos-wrapper:
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Parse wrapper and verify pinned runtime source
         run: |
           bash -n skills/codex-dream-skin/scripts/dream-skin-macos.sh
@@ -58,7 +58,7 @@ jobs:
   windows-wrapper:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Parse wrapper and verify pinned runtime source
         shell: powershell
         env:
