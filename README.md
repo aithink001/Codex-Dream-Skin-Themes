@@ -10,7 +10,7 @@
 >
 > 选择主题方向，修改颜色、氛围或视觉主体，生成新的超宽背景。
 
-![Aurora Terminal](previews/aurora-terminal.webp)
+![Aurora Terminal](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/aurora-terminal.webp)
 
 ## 这个仓库提供什么
 
@@ -26,51 +26,51 @@
 
 ### Aurora Terminal / 极光终端
 
-[下载原图](themes/aurora-terminal.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=aurora-terminal&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/aurora-terminal.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=aurora-terminal&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Aurora Terminal](previews/aurora-terminal.webp)
+![Aurora Terminal](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/aurora-terminal.webp)
 
 ### Porcelain Bloom / 瓷光花境
 
-[下载原图](themes/porcelain-bloom.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=porcelain-bloom&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/porcelain-bloom.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=porcelain-bloom&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Porcelain Bloom](previews/porcelain-bloom.webp)
+![Porcelain Bloom](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/porcelain-bloom.webp)
 
 ### Solar Forge / 曜金熔炉
 
-[下载原图](themes/solar-forge.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=solar-forge&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/solar-forge.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=solar-forge&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Solar Forge](previews/solar-forge.webp)
+![Solar Forge](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/solar-forge.webp)
 
 ### Retro Future / 复古未来
 
-[下载原图](themes/retro-future.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=retro-future&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/retro-future.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=retro-future&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Retro Future](previews/retro-future.webp)
+![Retro Future](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/retro-future.webp)
 
 ### Jade Circuit / 翡翠回路
 
-[下载原图](themes/jade-circuit.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=jade-circuit&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/jade-circuit.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=jade-circuit&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Jade Circuit](previews/jade-circuit.webp)
+![Jade Circuit](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/jade-circuit.webp)
 
 ### Crimson Orbit / 赤红轨道
 
-[下载原图](themes/crimson-orbit.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=crimson-orbit&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/crimson-orbit.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=crimson-orbit&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Crimson Orbit](previews/crimson-orbit.webp)
+![Crimson Orbit](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/crimson-orbit.webp)
 
 ### Arctic Glass / 冰川玻璃
 
-[下载原图](themes/arctic-glass.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=arctic-glass&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/arctic-glass.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=arctic-glass&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Arctic Glass](previews/arctic-glass.webp)
+![Arctic Glass](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/arctic-glass.webp)
 
 ### Sunset Paper / 落日纸境
 
-[下载原图](themes/sunset-paper.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=sunset-paper&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+[下载原图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/sunset-paper.png) · [在线生成同风格](https://image3.org/zh/codex-dream-skin-generator?theme=sunset-paper&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
 
-![Sunset Paper](previews/sunset-paper.webp)
+![Sunset Paper](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/previews/sunset-paper.webp)
 
 ## 图片规格
 

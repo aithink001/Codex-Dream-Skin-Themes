@@ -11,12 +11,13 @@
 - 不使用未授权人物、角色、品牌或受保护素材
 - 必须同时提交生成提示词或制作说明
 
-## 文件结构
+## 提交方式
 
-1. 将 PNG 放入 `themes/`
-2. 在 `prompts/themes.json` 增加对应条目
+1. 将 PNG 原图和 WebP 预览图上传到稳定的 HTTPS CDN
+2. 在 `prompts/themes.json` 增加原图与预览图的绝对 CDN URL
 3. 在 README 的主题预览中增加图片和说明
-4. 确认 JSON 格式正确、图片能够在 GitHub 正常显示
+4. 不要把图片二进制文件提交到仓库
+5. 确认 JSON 格式正确、CDN 图片能够在 GitHub 正常显示
 
 ## Pull Request
 
