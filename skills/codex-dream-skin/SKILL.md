@@ -5,25 +5,25 @@ description: Install, customize, launch, hot-switch, pause, inspect, verify, pac
 
 # Codex Dream Skin
 
-Apply a real renderer skin to the official Codex Desktop app. Keep Codex's native sidebar, project selector, cards, task content, menus, keyboard focus, and composer interactive. Never treat a showcase screenshot as an installed theme.
+Apply a real renderer skin to the official Codex Desktop app while keeping the native sidebar, project selector, cards, task content, menus, keyboard focus, and composer interactive.
 
-## Non-negotiable rules
+## Safety guarantees
 
-- Run the bundled platform wrapper. It downloads the pinned runtime source and verifies its exact Git commit before invoking it.
-- Never modify `Codex.app`, `app.asar`, `WindowsApps`, an official code signature, accounts, chats, projects, API keys, model providers, or unrelated settings.
-- Ask for explicit authorization before restarting a running Codex window. Use `start-authorized` or `restore-authorized` only after that authorization; unsaved input may be lost.
-- Use an HTTPS image URL or a user-selected local image. Never use a full-interface showcase screenshot as a background.
-- Keep decorative layers non-interactive and reject any result that hides or replaces native controls.
-- Report success only after Verify passes. Downloading an image, installing files, or starting an injector is not proof of success.
-- Warn that loopback CDP is powerful and has no same-user authentication. Advise the user not to run untrusted local software while the skin is active.
+- The platform wrapper downloads a pinned runtime and verifies its exact Git commit before use.
+- Official `Codex.app`, `app.asar`, `WindowsApps`, signatures, accounts, chats, projects, API keys, and model providers remain unchanged.
+- Restart confirmation appears before a running Codex window is closed. Unsaved input may be lost after confirmation.
+- Custom themes use an HTTPS image URL or a local image selected by the user. Full-interface showcase screenshots are visual references, not theme backgrounds.
+- Decorative layers do not receive pointer events, so native controls remain clickable.
+- A theme is considered active only after Verify passes.
+- CDP listens on loopback only. Because local processes under the same user can still access it, use Restore when the themed session is no longer needed.
 
 ## Select the platform
 
 - macOS: run `scripts/dream-skin-macos.sh`.
 - Windows: run `scripts/dream-skin-windows.ps1` with Windows PowerShell.
-- Linux: stop; the runtime does not support Linux.
+- Linux: not supported.
 
-Resolve script paths relative to this `SKILL.md`. Do not assume the current working directory is the skill folder.
+The commands below use paths relative to this Skill folder.
 
 ## macOS capabilities
 
@@ -90,7 +90,7 @@ bash scripts/dream-skin-macos.sh start
 bash scripts/dream-skin-macos.sh start --port 9350
 bash scripts/dream-skin-macos.sh start --foreground-injector
 
-# Use only after explicit restart authorization.
+# Non-interactive restart after the restart has already been confirmed.
 bash scripts/dream-skin-macos.sh start-authorized --port 9350
 
 # Fast state, machine-readable state, or deeper CDP probe.
@@ -107,7 +107,7 @@ Optional SwiftBar controller:
 # If SwiftBar already exists, avoid package installation.
 bash scripts/dream-skin-macos.sh menubar-install --no-brew
 
-# Without --no-brew, obtain approval before allowing Homebrew to install SwiftBar.
+# Without --no-brew, Homebrew may install SwiftBar after confirmation.
 bash scripts/dream-skin-macos.sh menubar-install
 
 # Native-confirmed menu-controller apply path.
@@ -128,7 +128,7 @@ bash scripts/dream-skin-macos.sh verify --reload --screenshot "/absolute/reload-
 # Soft removal plus selective base appearance restore.
 bash scripts/dream-skin-macos.sh restore
 
-# Use restart only after explicit authorization; add --uninstall to remove Desktop launchers.
+# Restart Codex and remove Desktop launchers after confirmation.
 bash scripts/dream-skin-macos.sh restore --restart-codex --uninstall
 
 # Regression suite and distributable ZIP builders with SHA-256 output.
@@ -139,7 +139,7 @@ bash scripts/dream-skin-macos.sh build-release
 
 ## Windows capabilities
 
-Require the official Microsoft Store `OpenAI.Codex` package and Node.js 22+. The runtime dynamically discovers the current Appx package, validates Store identity, serializes operations with a per-user lock, and preserves strict UTF-8 `config.toml` bytes.
+Windows requires the official Microsoft Store `OpenAI.Codex` package and Node.js 22+. The runtime dynamically discovers the current Appx package, validates Store identity, serializes operations with a per-user lock, and preserves strict UTF-8 `config.toml` bytes.
 
 ```powershell
 # Download and validate the pinned source.
@@ -153,7 +153,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.p
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action start -Port 9335
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action start -ProfilePath "C:\path\profile" -ForegroundInjector
 
-# Use only after explicit restart authorization.
+# Non-interactive restart after the restart has already been confirmed.
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action start-authorized
 
 # Verify and capture proof.
@@ -165,10 +165,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.p
 # Restore without reopening Codex.
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action restore -NoRelaunch
 
-# Use only after explicit authorization to close Codex without another prompt.
+# Close and restore without another prompt after the action has already been confirmed.
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action restore-authorized
 
-# Exact byte-for-byte recovery of the pre-install config. Explain that the current config is archived first.
+# Exact byte-for-byte recovery of the pre-install config; the current config is archived first.
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action recover-config
 
 # Remove shortcuts and restore appearance, or run all regression tests.
@@ -176,11 +176,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.p
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action test
 ```
 
-The pinned Windows runtime provides its bundled decorative theme. Do not promise arbitrary-image Windows customization until that runtime adds it and live verification passes.
+The Windows runtime currently provides its bundled decorative theme. Custom image themes are available on macOS only.
 
-## Verification acceptance
+## Verification
 
-Require both automated verification and visual inspection of any proof screenshot.
+Verify checks the live renderer and can save a proof screenshot for visual inspection.
 
 - Home: visible independent banner, live native heading, two to four native suggestion cards, real project selector, native composer, native sidebar, no horizontal overflow.
 - Task: selected background remains decorative; messages, approvals, attachments, menus, and composer stay readable and clickable.
@@ -189,4 +189,4 @@ Require both automated verification and visual inspection of any proof screensho
 - Safety: verified loopback target and process identity; official signature/package unchanged.
 - Rollback: Restore removes injection, closes the saved CDP session when restarted, and preserves unrelated configuration.
 
-After Verify, report the OS, pinned runtime commit, live verification result, proof path, native sidebar/composer result, reload result when tested, and exact Restore command. Codex updates may change renderer selectors; rerun install, launch, and Verify after every update.
+The result includes the operating system, pinned runtime commit, live verification status, proof path, native sidebar/composer status, reload result when tested, and the Restore command. Codex updates may change renderer selectors, so rerun install, launch, and Verify after every update.

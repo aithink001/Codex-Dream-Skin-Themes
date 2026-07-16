@@ -77,7 +77,7 @@ Codex Skill
 | 保存主题库并快速切换 | ✅ | — |
 | 查看状态 / 暂停后恢复 | ✅ | — |
 | SwiftBar 菜单栏控制 | ✅ | — |
-| Renderer reload 后重新注入验证 | ✅ | 手动验收 |
+| Renderer reload 后重新注入验证 | ✅ | 需实机检查 |
 | 自定义调试端口 | ✅ | ✅ |
 | 前台 Injector 诊断 | ✅ | ✅ |
 | 不创建快捷方式安装 | ✅ | ✅ |
@@ -88,14 +88,14 @@ Codex Skill
 
 当前 Windows 运行时提供内置主题和安全恢复，但还没有与 macOS 同等级的任意图片定制流程。因此仓库不会写成“Windows 可随便换图”。
 
-完整命令、授权边界和验收标准见 [`SKILL.md`](skills/codex-dream-skin/SKILL.md)。其中 `start-authorized`、`restore-authorized` 和精确配置恢复只允许在用户明确授权后使用。
+完整命令、安全说明和验证方式见 [`SKILL.md`](skills/codex-dream-skin/SKILL.md)。`start-authorized` 和 `restore-authorized` 适合已经确认重启、需要无二次弹窗的自动化场景。
 
 ## 安全边界
 
 主题通过本机 Chromium DevTools Protocol 工作。端口只绑定 `127.0.0.1`，但 CDP 对同一台电脑上的本地程序没有用户级认证。
 
 - 主题运行期间不要运行来路不明的本机程序。
-- Codex 正在运行时，Skill 必须先获得用户明确同意才可重启。
+- Codex 正在运行时，重启前会显示确认提示，避免意外丢失尚未提交的输入。
 - Codex 更新后重新运行 Verify；DOM 结构变化可能导致主题失效。
 - 不想继续使用时运行 Restore，关闭主题注入与调试会话。
 
