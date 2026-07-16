@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Dream Skin"
+  short_description: "Install, verify, customize, or restore a real Codex skin"
+  default_prompt: "Use $codex-dream-skin to install and verify a reversible theme for my Codex desktop app."
