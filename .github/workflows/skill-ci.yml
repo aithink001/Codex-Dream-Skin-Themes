@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - ".github/workflows/skill-ci.yml"
+      - "README.md"
       - "skills/codex-dream-skin/**"
   pull_request:
     paths:
       - ".github/workflows/skill-ci.yml"
+      - "README.md"
       - "skills/codex-dream-skin/**"
   workflow_dispatch:
 

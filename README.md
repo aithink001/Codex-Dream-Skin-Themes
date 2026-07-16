@@ -1,180 +1,235 @@
-# Codex Dream Skin Skill
+# Codex Dream Skin：Codex App 换肤 Skill 与自定义主题工具
 
-真正可执行、可验证、可恢复的 Codex Desktop 换肤 Skill，不是把效果图贴进窗口里冒充主题。
+Codex Dream Skin 是一个免费开源的 **Codex App 换肤 Skill**。它可以为 Codex Desktop 安装可交互的背景皮肤：macOS 支持自定义图片、CDN Banner、主题保存与切换，Windows 支持内置主题；两个平台都支持运行验证和恢复官方外观。
 
-[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827)](skills/codex-dream-skin/SKILL.md)
 [![Skill CI](https://github.com/aithink001/Codex-Dream-Skin-Themes/actions/workflows/skill-ci.yml/badge.svg)](https://github.com/aithink001/Codex-Dream-Skin-Themes/actions/workflows/skill-ci.yml)
-[![macOS](https://img.shields.io/badge/macOS-supported-22c55e)](#实际支持范围)
-[![Windows](https://img.shields.io/badge/Windows-supported-2563eb)](#实际支持范围)
-[![Images](https://img.shields.io/badge/showcase_images-CDN-7c3aed)](#效果参考)
+[![macOS](https://img.shields.io/badge/macOS-supported-22c55e)](#支持哪些系统和功能)
+[![Windows](https://img.shields.io/badge/Windows-supported-2563eb)](#支持哪些系统和功能)
+[![License](https://img.shields.io/badge/license-MIT-2563eb)](LICENSE)
 
-> **[在线生成可用于主题的超宽 Banner](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=readme&utm_campaign=codex_dream_skin)**
+原生侧栏、项目选择、建议卡片、任务内容和输入框仍然可以正常点击与输入；主题图片只用于 Banner 和装饰背景，不会把一张假界面截图盖在 Codex 上。
 
-## 这次是真的怎么用
+**[没有合适的背景图？打开 Codex Dream Skin Banner 在线生成器](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=readme&utm_campaign=codex_dream_skin)**
 
-这个仓库现在提供可安装的 [`codex-dream-skin` Skill](skills/codex-dream-skin/SKILL.md)。用户可以直接告诉 Codex：
+[![粉系定制 Codex Dream Skin 完整界面效果](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg)](https://image3.org/zh/codex-dream-skin-generator?theme=pink-custom&utm_source=github&utm_medium=hero&utm_campaign=codex_dream_skin)
+
+[下载安装](#codex-dream-skin-下载与安装) · [自定义主题](#如何给-codex-更换自定义主题) · [功能对比](#支持哪些系统和功能) · [效果预览](#codex-dream-skin-效果预览) · [验证与恢复](#如何验证主题已经生效) · [常见问题](#常见问题)
+
+## Codex Dream Skin 下载与安装
+
+### 方法一：让 Codex 安装 Skill
+
+把下面这段话发送给 Codex：
 
 ```text
 请从这个 GitHub 仓库安装 codex-dream-skin Skill：
 https://github.com/aithink001/Codex-Dream-Skin-Themes/tree/main/skills/codex-dream-skin
+
+安装完成后，使用 $codex-dream-skin 检查当前系统并告诉我下一步。
 ```
 
-也可以手动安装：
+重新打开 Codex 后，即可通过 `$codex-dream-skin` 使用主题安装、定制、验证和恢复功能。
+
+### 方法二：手动安装
 
 ```bash
-git clone https://github.com/aithink001/Codex-Dream-Skin-Themes.git
+git clone --depth 1 https://github.com/aithink001/Codex-Dream-Skin-Themes.git
 mkdir -p ~/.codex/skills
 cp -R Codex-Dream-Skin-Themes/skills/codex-dream-skin ~/.codex/skills/
 ```
 
-重新打开 Codex 后，可以这样使用：
+然后重新打开 Codex，并发送：
 
 ```text
-使用 $codex-dream-skin 检查我的电脑是否支持，并安装主题。
+使用 $codex-dream-skin 检查环境并安装 Codex Dream Skin。
 ```
+
+## 如何给 Codex 更换自定义主题
+
+### macOS：使用本地图片或 CDN Banner
+
+准备一张横向图片，建议宽度不低于 2000px。可以直接把本地图片路径或 HTTPS CDN 地址交给 Skill：
 
 ```text
-使用 $codex-dream-skin，把这个 Banner 应用到 Codex：
-https://你的-CDN-地址/banner.png
-应用后生成验证截图；如果验证失败，不要说成功。
+使用 $codex-dream-skin，把这张图片设置为我的 Codex 主题：
+https://cdn.example.com/my-codex-banner.png
+
+主题名称叫「Purple Night」。应用完成后运行 Verify 并保存验证截图。
 ```
+
+还可以继续告诉 Codex：
 
 ```text
-使用 $codex-dream-skin 恢复 Codex 官方外观。
+使用 $codex-dream-skin 列出我保存的主题，并切换到「Purple Night」。
 ```
 
-## 它实际做了什么
+macOS 支持：
+
+- 本地 PNG、JPEG、HEIC、TIFF、WebP；
+- HTTPS CDN 图片；
+- 主题名称、标语、引用文字和强调色；
+- 保存多套主题并快速切换；
+- SwiftBar 菜单栏控制；
+- 暂停皮肤、重新应用、验证截图和完整恢复。
+
+### Windows：安装内置 Codex 主题
+
+Windows 当前支持内置装饰主题、验证截图和安全恢复：
 
 ```text
-Codex Skill
-    │  下载并校验固定提交的主题运行时
-    ▼
-启动官方 Codex + 仅监听 127.0.0.1 的 CDP
-    │  注入 CSS 和装饰 DOM
-    ▼
-原生侧栏 / 项目选择 / 建议卡 / 任务 / 输入框继续可交互
-    │
-    ├── Verify：检查真实页面标记并可保存实机截图
-    └── Restore：移除注入并恢复保存的外观配置
+使用 $codex-dream-skin 在 Windows Codex App 中安装主题，完成后运行 Verify。
 ```
 
-- 不修改官方 `.app`、`app.asar` 或 `WindowsApps`。
-- 不把整张“假 Codex 界面截图”覆盖在应用上。
-- 不修改账号、对话、项目、API Key 或模型供应商。
-- 实际执行引擎来自公开的 [`Codex-Dream-Skin`](https://github.com/Fei-Away/Codex-Dream-Skin) 运行时；Skill 固定到已检查的提交 `26c6c410e0e0bfc053356474620e17f934f483fc`，拉取后再次核对 Git commit。
-- 只有 Verify 通过才允许声称“已经生效”。下载图片、运行安装脚本都不等于验证成功。
+Windows 版目前还不支持任意图片主题。需要自定义 Banner 时请使用 macOS 版本。
 
-## 实际支持范围
+## 支持哪些系统和功能
 
-| 能力 | macOS | Windows |
+| 功能 | macOS | Windows |
 | --- | :---: | :---: |
-| 安装真实注入器 | ✅ | ✅ |
-| 启动前询问是否重启 Codex | ✅ | ✅ |
-| 实时注入 CSS / 装饰 DOM | ✅ | ✅ |
-| 运行 Verify | ✅ | ✅ |
-| 输出实机验证截图 | ✅ | ✅ |
-| 使用自定义 Banner | ✅ | 暂不承诺 |
-| 保存主题库并快速切换 | ✅ | — |
-| 查看状态 / 暂停后恢复 | ✅ | — |
+| 安装 Codex Dream Skin | ✅ | ✅ |
+| 保留原生侧栏、任务和输入框 | ✅ | ✅ |
+| 自定义本地图片 | ✅ | 暂不支持 |
+| 使用 HTTPS CDN Banner | ✅ | 暂不支持 |
+| 保存和切换多套主题 | ✅ | 暂不支持 |
 | SwiftBar 菜单栏控制 | ✅ | — |
-| Renderer reload 后重新注入验证 | ✅ | 需实机检查 |
 | 自定义调试端口 | ✅ | ✅ |
-| 前台 Injector 诊断 | ✅ | ✅ |
-| 不创建快捷方式安装 | ✅ | ✅ |
-| 精确恢复安装前 config | — | ✅ |
-| 不重新打开 Codex 的恢复 | — | ✅ |
-| 构建客户 ZIP / 发布 ZIP | ✅ | — |
-| 恢复官方外观 | ✅ | ✅ |
+| Verify 实时验证 | ✅ | ✅ |
+| 输出验证截图 | ✅ | ✅ |
+| 恢复 Codex 官方外观 | ✅ | ✅ |
+| 构建可分发 ZIP | ✅ | — |
 
-当前 Windows 运行时提供内置主题和安全恢复，但还没有与 macOS 同等级的任意图片定制流程。因此仓库不会写成“Windows 可随便换图”。
+完整命令和高级选项见 [`codex-dream-skin/SKILL.md`](skills/codex-dream-skin/SKILL.md)。
 
-完整命令、安全说明和验证方式见 [`SKILL.md`](skills/codex-dream-skin/SKILL.md)。`start-authorized` 和 `restore-authorized` 适合已经确认重启、需要无二次弹窗的自动化场景。
+## Codex Dream Skin 效果预览
 
-## 安全边界
+下面的图片适合用来选择配色、构图和氛围。最终主题会保留 Codex 原生控件，实际效果以 Verify 截图为准。
 
-主题通过本机 Chromium DevTools Protocol 工作。端口只绑定 `127.0.0.1`，但 CDP 对同一台电脑上的本地程序没有用户级认证。
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=pink-custom&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg" alt="粉系定制 Codex Dream Skin 主题效果" width="100%"></a><br>
+      <strong>Pink Custom · 粉系定制</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=god-of-wealth&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/god-of-wealth.jpg" alt="财神打工版 Codex Dream Skin 主题效果" width="100%"></a><br>
+      <strong>God of Wealth · 财神打工版</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=red-white-scifi&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/red-white-scifi.jpg" alt="红白科幻 Codex App 自定义主题效果" width="100%"></a><br>
+      <strong>Red-White Sci-Fi · 红白科幻</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=clear-custom&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/clear-custom.jpg" alt="清透定制 Codex App 换肤效果" width="100%"></a><br>
+      <strong>Clear Custom · 清透定制</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=inspiration-universe&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/inspiration-universe.jpg" alt="灵感小宇宙 Codex 换肤主题效果" width="100%"></a><br>
+      <strong>Inspiration Universe · 灵感小宇宙</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=purple-night&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/purple-night.jpg" alt="紫夜限定 Codex Dream Skin 背景主题" width="100%"></a><br>
+      <strong>Purple Night · 紫夜限定</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=miku-future&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/miku-future.jpg" alt="虚拟歌姬未来 Codex 自定义主题效果" width="100%"></a><br>
+      <strong>Miku Future · 虚拟歌姬未来</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://image3.org/zh/codex-dream-skin-generator?theme=stage-black-gold&utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg" alt="舞台黑金 Codex App 主题效果" width="100%"></a><br>
+      <strong>Stage Black-Gold · 舞台黑金</strong>
+    </td>
+  </tr>
+</table>
 
-- 主题运行期间不要运行来路不明的本机程序。
-- Codex 正在运行时，重启前会显示确认提示，避免意外丢失尚未提交的输入。
-- Codex 更新后重新运行 Verify；DOM 结构变化可能导致主题失效。
-- 不想继续使用时运行 Restore，关闭主题注入与调试会话。
+**[选择一个风格并生成自己的 Codex Dream Skin Banner](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=showcase_cta&utm_campaign=codex_dream_skin)**
 
-## 自定义 Banner
+## Codex 换肤是怎样工作的
 
-在线生成器只负责生成适合注入器使用的 Banner，不会伪造一个不可点击的 Codex 界面：
+Skill 会启动官方 Codex Desktop，并通过只监听 `127.0.0.1` 的 Chromium DevTools Protocol 注入主题 CSS 和装饰层。它不会修改、替换或重新签名官方应用文件。
 
-**[打开 Codex Dream Skin Banner 生成器](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=banner_workflow&utm_campaign=codex_dream_skin)**
+```text
+Codex Dream Skin Skill
+        ↓
+启动官方 Codex + 本机回环 CDP
+        ↓
+注入主题 CSS、Banner 和装饰背景
+        ↓
+原生侧栏、项目、任务和输入框保持可交互
+```
 
-建议：
+运行时固定到已检查的提交 `26c6c410e0e0bfc053356474620e17f934f483fc`，下载后会再次核对 Git commit。主题运行期间，请避免运行来路不明的本机程序；不再使用时可以随时运行 Restore 关闭主题和调试会话。
 
-- 使用 HTTPS CDN 地址；
-- 选择横向图片，建议宽度不低于 2000px；
-- 左侧保持相对干净，给原生标题和控件留空间；
-- 只生成背景艺术，不生成假侧栏、假输入框、假按钮和水印。
+## 如何验证主题已经生效
 
-所有展示图片均使用外部 CDN，仓库不保存 JPG、PNG、WebP 等图片二进制。
+发送下面的提示词：
 
-## 效果参考
+```text
+使用 $codex-dream-skin 验证当前主题，并保存一张验证截图。
+```
 
-下面的图片用于选择视觉方向，不等于仓库承诺可以 1:1 复刻整张界面。真正结果以 Skill 的实机 Verify 为准。
+Verify 会检查：
 
-### Pink Custom / 粉系定制
+- 主题 CSS 和注入标记是否存在；
+- 原生侧栏与输入框是否仍然可见；
+- 首页 Banner、建议卡和项目选择是否正常；
+- 是否出现横向溢出或装饰层遮挡点击；
+- 页面重新加载后主题是否可以重新应用。
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=pink-custom&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+只有 Verify 通过，才表示当前 Codex Dream Skin 已正常运行。
 
-![粉系定制 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg)
+## 如何卸载或恢复 Codex 官方外观
 
-### God of Wealth / 财神打工版
+发送：
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/god-of-wealth.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=god-of-wealth&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+```text
+使用 $codex-dream-skin 恢复 Codex 官方外观，并关闭主题调试会话。
+```
 
-![财神打工版 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/god-of-wealth.jpg)
+恢复功能会移除主题 CSS 和装饰层，并恢复安装前保存的外观设置。macOS 还可以删除桌面启动器，Windows 可以选择恢复完整的安装前配置备份。
 
-### Red-White Sci-Fi / 红白科幻
+## 常见问题
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/red-white-scifi.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=red-white-scifi&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+### Codex Dream Skin 是官方功能吗？
 
-![红白科幻 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/red-white-scifi.jpg)
+不是。这是面向 Codex Desktop 的非官方开源换肤工具，与 OpenAI 没有隶属、认可或赞助关系。
 
-### Clear Custom / 清透定制
+### 它会修改 Codex.app 或 app.asar 吗？
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/clear-custom.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=clear-custom&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+不会。主题通过本机回环 CDP 运行，不会修改 `.app`、`app.asar`、`WindowsApps` 或官方代码签名。
 
-![清透定制 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/clear-custom.jpg)
+### Codex Dream Skin 支持 Windows 吗？
 
-### Inspiration Universe / 灵感小宇宙
+支持。Windows 可以安装内置主题、运行 Verify、保存验证截图并恢复官方外观。任意图片主题目前仅支持 macOS。
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/inspiration-universe.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=inspiration-universe&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+### 可以使用自己生成的图片吗？
 
-![灵感小宇宙 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/inspiration-universe.jpg)
+可以。macOS 支持本地图片和 HTTPS CDN 地址。建议使用横向构图，并让左侧保持简洁，以免影响原生标题和控件的可读性。
 
-### Purple Night / 紫夜限定
+### Codex 更新后主题失效怎么办？
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/purple-night.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=purple-night&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+重新运行安装、启动和 Verify。Codex 更新可能改变界面结构，因此每次更新后都建议重新验证。
 
-![紫夜限定 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/purple-night.jpg)
+### 图片会保存在 GitHub 仓库里吗？
 
-### Miku Future / 虚拟歌姬未来
+不会。展示图片全部通过 HTTPS CDN 加载，仓库不提交 JPG、PNG、WebP 等图片二进制。
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/miku-future.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=miku-future&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+## 项目文件
 
-![虚拟歌姬未来 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/miku-future.jpg)
+- [`skills/codex-dream-skin/SKILL.md`](skills/codex-dream-skin/SKILL.md) — install, customize, switch, verify, package, and restore workflows.
+- [`skills/codex-dream-skin/scripts/dream-skin-macos.sh`](skills/codex-dream-skin/scripts/dream-skin-macos.sh) — macOS command wrapper.
+- [`skills/codex-dream-skin/scripts/dream-skin-windows.ps1`](skills/codex-dream-skin/scripts/dream-skin-windows.ps1) — Windows command wrapper.
+- [`prompts/themes.json`](prompts/themes.json) — machine-readable Codex theme Banner prompts.
 
-### Stage Black-Gold / 舞台黑金
+## 开源许可与商标
 
-[查看完整参考图](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg) · [生成原创 Banner](https://image3.org/zh/codex-dream-skin-generator?theme=stage-black-gold&utm_source=github&utm_medium=theme&utm_campaign=codex_dream_skin)
+仓库代码与文本采用 [MIT License](LICENSE)。外部 CDN 图片不随仓库许可证自动授权。Codex、OpenAI 以及相关商标归各自权利人所有；人物、角色或商标素材用于公开再分发或商业项目时，请自行确认相应授权。
 
-![舞台黑金 Codex Dream Skin 效果参考](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg)
+---
 
-## 仓库内容
-
-- [`skills/codex-dream-skin/SKILL.md`](skills/codex-dream-skin/SKILL.md)：Codex 执行规范与验证规则。
-- [`skills/codex-dream-skin/scripts/dream-skin-macos.sh`](skills/codex-dream-skin/scripts/dream-skin-macos.sh)：macOS 安装、定制、主题库、状态、暂停、菜单栏、验证、打包和恢复入口。
-- [`skills/codex-dream-skin/scripts/dream-skin-windows.ps1`](skills/codex-dream-skin/scripts/dream-skin-windows.ps1)：Windows 安装、启动、诊断、验证、精确配置恢复和卸载入口。
-- [`prompts/themes.json`](prompts/themes.json)：可机器读取的 Banner 风格提示词。
-
-## 声明
-
-这是非官方项目，与 OpenAI 没有隶属、认可或赞助关系。Codex 及相关商标归其权利人所有。效果参考中的人物、角色或商标用于公开再分发或商业用途前，请自行确认相应权利。
-
-仓库代码和文本许可见 [LICENSE](LICENSE)。外部 CDN 图片不随仓库许可证自动授权。
+**English:** Open-source Codex Dream Skin Skill for Codex Desktop themes on macOS and Windows. Install a reversible skin, use a custom image on macOS, verify the live native interface, and restore the official appearance at any time.
