@@ -1,0 +1,82 @@
+[
+  {
+    "id": "aurora-terminal",
+    "name": "Aurora Terminal",
+    "nameZh": "极光终端",
+    "appearance": "dark",
+    "resolution": "2172x724",
+    "file": "../themes/aurora-terminal.png",
+    "prompt": "An original dark aurora workspace atmosphere: deep midnight navy and graphite space, flowing electric-violet and cyan aurora ribbons, subtle glassy geometric portal forms, sparse stardust, premium cinematic abstract digital art, futuristic and quietly inspiring. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=aurora-terminal&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "porcelain-bloom",
+    "name": "Porcelain Bloom",
+    "nameZh": "瓷光花境",
+    "appearance": "light",
+    "resolution": "2172x724",
+    "file": "../themes/porcelain-bloom.png",
+    "prompt": "An original light porcelain-garden atmosphere: warm ivory paper texture, translucent blush petals, delicate glass leaves, soft champagne-gold arcs, and a pearlescent abstract bloom, refined editorial illustration with subtle 3D glass details, bright and calm. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=porcelain-bloom&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "solar-forge",
+    "name": "Solar Forge",
+    "nameZh": "曜金熔炉",
+    "appearance": "dark",
+    "resolution": "2172x724",
+    "file": "../themes/solar-forge.png",
+    "prompt": "An original black-gold solar-forge atmosphere: matte obsidian field, sculptural amber eclipse, fine molten-gold trajectories, subtle metallic particles, architectural light planes, luxury cinematic abstract art, focused and powerful. Avoid currency symbols and traditional motifs. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=solar-forge&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "retro-future",
+    "name": "Retro Future",
+    "nameZh": "复古未来",
+    "appearance": "light",
+    "resolution": "2172x724",
+    "file": "../themes/retro-future.png",
+    "prompt": "An original optimistic retro-future laboratory landscape: warm cream backdrop, coral-red sun, mint and sky-blue translucent ribbons, small modular geometric forms, clean horizon glow, polished modernist illustration with subtle 3D materials, inventive and energetic. Avoid childish clip art. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=retro-future&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "jade-circuit",
+    "name": "Jade Circuit",
+    "nameZh": "翡翠回路",
+    "appearance": "dark",
+    "resolution": "2172x724",
+    "file": "../themes/jade-circuit.png",
+    "prompt": "An original emerald circuit garden: deep forest-black atmosphere, translucent jade glass planes, fine luminous green pathways, floating moss-like particles, one sculptural crystalline leaf formation, premium bio-digital abstract art, elegant and technical. Avoid literal circuit boards. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=jade-circuit&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "crimson-orbit",
+    "name": "Crimson Orbit",
+    "nameZh": "赤红轨道",
+    "appearance": "dark",
+    "resolution": "2172x724",
+    "file": "../themes/crimson-orbit.png",
+    "prompt": "An original crimson orbital architecture: deep charcoal field, glowing scarlet-red ring, satin red ribbons, subtle white light seams, minimal brushed-metal geometry, premium cinematic abstract art with Swiss-modern discipline, decisive and high-contrast. No flags or political symbols. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=crimson-orbit&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "arctic-glass",
+    "name": "Arctic Glass",
+    "nameZh": "冰川玻璃",
+    "appearance": "light",
+    "resolution": "2172x724",
+    "file": "../themes/arctic-glass.png",
+    "prompt": "An original arctic-glass horizon: pale ice-blue and pearl-gray atmosphere, translucent frozen arches, fine prismatic light, distant crystalline ridge, soft mist, refined architectural abstract render, clear and spacious. Avoid snowflakes and holiday motifs. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=arctic-glass&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "sunset-paper",
+    "name": "Sunset Paper",
+    "nameZh": "落日纸境",
+    "appearance": "light",
+    "resolution": "2172x724",
+    "file": "../themes/sunset-paper.png",
+    "prompt": "An original sunset paper studio: muted terracotta, dusty rose, and warm sand layers shaped like folded-paper landscapes, one soft peach sun, fine ink-like contour lines, tactile editorial paper sculpture with subtle depth, warm and understated. Avoid craft clutter. Create a production-ready panoramic 3:1 desktop theme background. Keep the entire left 38 percent calm and low-detail for native interface titles. Place the main visual focus on the right half. Pure background artwork only: no UI, no windows, no cards, no people, no characters, no text, no letters, no logos, and no watermark. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=sunset-paper&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  }
+]
