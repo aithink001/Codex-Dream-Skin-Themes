@@ -7,6 +7,7 @@ UPSTREAM_COMMIT="a1c48b3a84cc64532196e624fdf33ee1277cb018"
 CACHE_PARENT="${CODEX_DREAM_SKIN_CACHE_DIR:-${HOME}/Library/Caches/CodexDreamSkinSkill}"
 SOURCE_ROOT="${CACHE_PARENT}/source-${UPSTREAM_COMMIT}"
 WRAPPER_PATH="$(cd "$(dirname "$0")" && pwd -P)/$(basename "$0")"
+WORLD_CUP_PROFILE_SCRIPT="$(cd "$(dirname "$0")" && pwd -P)/set-world-cup-profile.mjs"
 WORLD_CUP_THEME_URL="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/world-cup-victory-night.png"
 WORLD_CUP_STATE_ROOT="${HOME}/Library/Application Support/CodexDreamSkinStudio"
 WORLD_CUP_RESULT_PATH="${WORLD_CUP_STATE_ROOT}/world-cup-install-result.txt"
@@ -219,6 +220,11 @@ run_world_cup_helper() {
     --tagline '冠军之夜，为热爱全力以赴。' \
     --quote 'PLAY BOLD. BUILD BOLDER.' \
     --accent '#d7aa42' --secondary '#0b8f62' --highlight '#f6d77a'
+  (
+    . "$SOURCE_ROOT/macos/scripts/common-macos.sh"
+    ensure_state_root
+    "$NODE" "$WORLD_CUP_PROFILE_SCRIPT" "$THEME_DIR/theme.json"
+  )
   /bin/rm -f "$temporary_image"
   temporary_image=""
 

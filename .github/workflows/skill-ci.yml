@@ -45,7 +45,31 @@ jobs:
           image_suffixes = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
           images = [p for p in Path(".").rglob("*") if p.is_file() and p.suffix.lower() in image_suffixes]
           assert not images, f"Images must stay on CDN, found: {images}"
+
           PY
+
+      - name: Verify World Cup display profile
+        run: |
+          theme_dir="$RUNNER_TEMP/world-cup-theme"
+          mkdir -p "$theme_dir"
+          cat > "$theme_dir/theme.json" <<'JSON'
+          {
+            "schemaVersion": 1,
+            "name": "World Cup Victory Night",
+            "appearance": "auto",
+            "art": { "safeArea": "auto", "taskMode": "auto" }
+          }
+          JSON
+          node skills/codex-dream-skin/scripts/set-world-cup-profile.mjs \
+            "$theme_dir/theme.json"
+          node -e '
+            const theme = require(process.argv[1]);
+            if (theme.appearance !== "dark") throw new Error("World Cup appearance is not dark");
+            if (theme.art.safeArea !== "none") throw new Error("World Cup safe area is not none");
+            if (theme.art.taskMode !== "auto") throw new Error("Existing art settings were not preserved");
+          ' "$theme_dir/theme.json"
+          grep -Fq '"$NODE" "$WORLD_CUP_PROFILE_SCRIPT" "$THEME_DIR/theme.json"' \
+            skills/codex-dream-skin/scripts/dream-skin-macos.sh
 
   macos-wrapper:
     runs-on: macos-14
