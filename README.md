@@ -7,40 +7,52 @@ Codex Dream Skin 是一个免费开源的 **Codex App 换肤 Skill**。它可以
 [![Windows](https://img.shields.io/badge/Windows-supported-2563eb)](#支持哪些系统和功能)
 [![License](https://img.shields.io/badge/license-MIT-2563eb)](LICENSE)
 
+## macOS 第一次使用：只复制这一段
+
+> 不要下载 ZIP，不要打开终端，不要自己退出或重新打开 Codex。
+
+把下面整段复制给 Codex：
+
+```text
+请安装或覆盖更新这个 GitHub 仓库里的 codex-dream-skin Skill：
+https://github.com/aithink001/Codex-Dream-Skin-Themes/tree/main/skills/codex-dream-skin
+
+安装后请完整读取新版 SKILL.md，并直接执行其中的 Ordinary-user path，为我安装世界杯主题。
+
+除“安装世界杯主题”确认弹窗外，不要让我运行任何命令，不要让我手动退出或重新打开 Codex。请自动完成安装、一次受控重启、主题应用和 Verify；只有 Verify 真正通过后才能告诉我成功。
+```
+
+接下来只做两件事：
+
+1. 看到系统弹窗后，点击 **“安装世界杯主题”**。
+2. 等待 Codex 自动重新打开。不要手动操作。
+
+看到世界杯背景就安装完成了。如果没有变化，不要再次重启，只需要对 Codex 说：
+
+```text
+检查世界杯主题安装结果并自动诊断，不要重启 Codex，也不要让我运行命令。
+```
+
+世界杯主题一键安装目前用于 macOS。Windows 用户请看[Windows 简单用法](#windows使用本地图片和托盘主题控制)。
+
 原生侧栏、项目选择、建议卡片、任务内容和输入框仍然可以正常点击与输入；主题图片只用于 Banner 和装饰背景，不会把一张假界面截图盖在 Codex 上。
 
 **[没有合适的背景图？打开 Codex Dream Skin Banner 在线生成器](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=readme&utm_campaign=codex_dream_skin)**
 
 [![粉系定制 Codex Dream Skin 完整界面效果](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg)](https://image3.org/zh/codex-dream-skin-generator?theme=pink-custom&utm_source=github&utm_medium=hero&utm_campaign=codex_dream_skin)
 
-[下载安装](#codex-dream-skin-下载与安装) · [自定义主题](#如何给-codex-更换自定义主题) · [功能对比](#支持哪些系统和功能) · [效果预览](#codex-dream-skin-效果预览) · [验证与恢复](#如何验证主题已经生效) · [常见问题](#常见问题)
-
-## 普通用户最简单的用法
-
-安装最新版 Skill 后，只需要对 Codex 说：
-
-```text
-使用 $codex-dream-skin 安装世界杯主题
-```
-
-macOS 只会出现一次系统确认。点击“安装世界杯主题”后，Skill 会自动完成安装、一次受控重启、主题应用和 Verify；不要手动退出或重新打开 Codex。
+[第一次使用](#macos-第一次使用只复制这一段) · [其他主题](#如何给-codex-更换自定义主题) · [功能对比](#支持哪些系统和功能) · [效果预览](#codex-dream-skin-效果预览) · [验证与恢复](#如何验证主题已经生效) · [常见问题](#常见问题)
 
 ## Codex Dream Skin 下载与安装
 
-### 方法一：让 Codex 安装 Skill
+### 推荐：让 Codex 自动安装
 
-把下面这段话发送给 Codex：
+直接使用本文最上方的[一键安装提示词](#macos-第一次使用只复制这一段)。Codex 会安装或更新 Skill，并自动完成世界杯主题的应用和验证。
 
-```text
-请从这个 GitHub 仓库安装 codex-dream-skin Skill：
-https://github.com/aithink001/Codex-Dream-Skin-Themes/tree/main/skills/codex-dream-skin
+<details>
+<summary><strong>高级用户：手动安装 Skill</strong></summary>
 
-安装完成后，使用 $codex-dream-skin 检查当前系统并告诉我下一步。
-```
-
-重新打开 Codex 后，即可通过 `$codex-dream-skin` 使用主题安装、定制、验证和恢复功能。
-
-### 方法二：手动安装
+如果你熟悉终端，也可以手动安装：
 
 ```bash
 git clone --depth 1 https://github.com/aithink001/Codex-Dream-Skin-Themes.git
@@ -48,11 +60,9 @@ mkdir -p ~/.codex/skills
 cp -R Codex-Dream-Skin-Themes/skills/codex-dream-skin ~/.codex/skills/
 ```
 
-然后重新打开 Codex，并发送：
+安装后可以通过 `$codex-dream-skin` 使用主题定制、切换、验证和恢复功能。
 
-```text
-使用 $codex-dream-skin 检查环境并安装 Codex Dream Skin。
-```
+</details>
 
 ## 如何给 Codex 更换自定义主题
 
