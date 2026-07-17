@@ -48,7 +48,7 @@ jobs:
 
           PY
 
-      - name: Verify World Cup display profile
+      - name: Verify one-click display profiles
         run: |
           theme_dir="$RUNNER_TEMP/world-cup-theme"
           mkdir -p "$theme_dir"
@@ -60,15 +60,37 @@ jobs:
             "art": { "safeArea": "auto", "taskMode": "auto" }
           }
           JSON
-          node skills/codex-dream-skin/scripts/set-world-cup-profile.mjs \
-            "$theme_dir/theme.json"
+          node skills/codex-dream-skin/scripts/set-theme-profile.mjs \
+            "$theme_dir/theme.json" "World Cup Victory Night"
           node -e '
             const theme = require(process.argv[1]);
             if (theme.appearance !== "dark") throw new Error("World Cup appearance is not dark");
             if (theme.art.safeArea !== "none") throw new Error("World Cup safe area is not none");
             if (theme.art.taskMode !== "auto") throw new Error("Existing art settings were not preserved");
           ' "$theme_dir/theme.json"
-          grep -Fq '"$NODE" "$WORLD_CUP_PROFILE_SCRIPT" "$THEME_DIR/theme.json"' \
+          custom_theme_dir="$RUNNER_TEMP/custom-theme"
+          mkdir -p "$custom_theme_dir"
+          cat > "$custom_theme_dir/theme.json" <<'JSON'
+          {
+            "schemaVersion": 1,
+            "name": "My Codex Dream Skin",
+            "appearance": "auto",
+            "art": { "safeArea": "auto", "taskMode": "banner" }
+          }
+          JSON
+          node skills/codex-dream-skin/scripts/set-theme-profile.mjs \
+            "$custom_theme_dir/theme.json" "My Codex Dream Skin"
+          node -e '
+            const theme = require(process.argv[1]);
+            if (theme.appearance !== "dark") throw new Error("Custom appearance is not dark");
+            if (theme.art.safeArea !== "none") throw new Error("Custom safe area is not none");
+            if (theme.art.taskMode !== "banner") throw new Error("Custom art settings were not preserved");
+          ' "$custom_theme_dir/theme.json"
+          grep -Fq '"$NODE" "$THEME_PROFILE_SCRIPT" "$THEME_DIR/theme.json"' \
+            skills/codex-dream-skin/scripts/dream-skin-macos.sh
+          grep -Fq 'apply-custom-url|apply-custom-file)' \
+            skills/codex-dream-skin/scripts/dream-skin-macos.sh
+          grep -Fq 'custom-install-status)' \
             skills/codex-dream-skin/scripts/dream-skin-macos.sh
 
   macos-wrapper:

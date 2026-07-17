@@ -11,6 +11,12 @@ Apply a real renderer skin to the official Codex Desktop app while keeping the n
 
 Do not explain CDP, ports, injectors, process state, or shell commands unless the user explicitly asks for technical details.
 
+When a macOS user asks to install Dream Skin without naming a theme or providing an image, ask only:
+
+> 请选择：1. 世界杯主题；2. 使用自己的图片。
+
+Do not start installation until the user chooses. If the user chooses their own image but has not provided one, ask them to upload an image or paste one HTTPS image URL. Do not ask them for theme parameters, paths, commands, or technical settings.
+
 When a macOS user asks to install the World Cup theme, run exactly:
 
 ```bash
@@ -24,6 +30,24 @@ bash scripts/dream-skin-macos.sh world-cup-status
 ```
 
 Report success only when the result says `status=success` and the live status shows the injector and CDP session. If the user declines the dialog or says not to restart, stop immediately and make no further apply or reload attempt.
+
+When a macOS user chooses their own image, use exactly one matching command:
+
+```bash
+# HTTPS image
+bash scripts/dream-skin-macos.sh apply-custom-url "https://cdn.example.com/theme.png"
+
+# Local or attached image
+bash scripts/dream-skin-macos.sh apply-custom-file "/absolute/path/to/theme.png"
+```
+
+Tell the user only to confirm the single native dialog and wait. The helper owns installation, one controlled Codex restart, theme preparation, launch, and Verify. After Codex returns, read the result without restarting:
+
+```bash
+bash scripts/dream-skin-macos.sh custom-install-status
+```
+
+Report success only when the result says `status=success` and the live status shows the injector and CDP session. Never use a full-interface showcase screenshot as the selected image. If the user declines the dialog or says not to restart, stop immediately.
 
 ## Safety guarantees
 
