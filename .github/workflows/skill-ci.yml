@@ -54,8 +54,22 @@ jobs:
       - name: Parse wrapper and verify pinned runtime source
         run: |
           bash -n skills/codex-dream-skin/scripts/dream-skin-macos.sh
-          CODEX_DREAM_SKIN_CACHE_DIR="$RUNNER_TEMP/codex-dream-skin" \
+          runtime_cache="$RUNNER_TEMP/codex-dream-skin"
+          CODEX_DREAM_SKIN_CACHE_DIR="$runtime_cache" \
             bash skills/codex-dream-skin/scripts/dream-skin-macos.sh source
+          runtime_root="$(find "$runtime_cache" -maxdepth 1 -type d -name 'source-*' -print -quit)"
+          test -s "$runtime_root/macos/presets/preset-midnight-aurora/theme.json"
+          grep -Fq 'seed_bundled_presets' "$runtime_root/macos/scripts/install-dream-skin-macos.sh"
+          grep -Fq 'switch-theme-macos.sh" --id preset-midnight-aurora' \
+            "$runtime_root/macos/scripts/install-dream-skin-macos.sh"
+          first_home="$RUNNER_TEMP/first-install-home"
+          HOME="$first_home" NODE="$(command -v node)" bash -c '
+            . "$1/macos/scripts/common-macos.sh"
+            ensure_state_root
+            seed_bundled_presets
+            "$SCRIPT_DIR/switch-theme-macos.sh" --id preset-midnight-aurora --no-apply
+            test -s "$THEME_DIR/theme.json"
+          ' _ "$runtime_root"
 
   windows-wrapper:
     runs-on: windows-latest
@@ -68,3 +82,17 @@ jobs:
         run: |
           powershell -NoProfile -ExecutionPolicy Bypass -File `
             skills\codex-dream-skin\scripts\dream-skin-windows.ps1 -Action source
+          $runtimeRoot = Get-ChildItem $env:CODEX_DREAM_SKIN_CACHE_DIR -Directory -Filter 'source-*' |
+            Select-Object -First 1
+          if ($null -eq $runtimeRoot) { throw 'Pinned Windows runtime was not downloaded.' }
+          foreach ($relative in @(
+            'windows\scripts\theme-windows.ps1',
+            'windows\scripts\tray-dream-skin.ps1',
+            'windows\assets\theme.json',
+            'windows\assets\dream-reference.jpg'
+          )) {
+            $path = Join-Path $runtimeRoot.FullName $relative
+            if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+              throw "Required Windows theme feature is missing: $relative"
+            }
+          }

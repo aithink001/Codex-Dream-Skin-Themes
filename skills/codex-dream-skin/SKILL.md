@@ -33,7 +33,7 @@ The commands below use paths relative to this Skill folder.
 # Download and validate the pinned runtime without changing Codex.
 bash scripts/dream-skin-macos.sh source
 
-# Validate official app identity, Team ID, architecture, signed bundled Node 20+, config, and payload.
+# Initialize a safe default theme on first use, then validate app identity, runtime, config, and payload.
 bash scripts/dream-skin-macos.sh doctor
 
 # Close Codex first. Installs launchers but does not launch Codex.
@@ -59,7 +59,7 @@ bash scripts/dream-skin-macos.sh customize-file "/absolute/banner.png" \
 # HTTPS CDN image with the same metadata controls.
 bash scripts/dream-skin-macos.sh customize-url "https://cdn.example.com/banner.png" --name "My Skin"
 
-# Return to the bundled abstract demo, without applying yet.
+# Return to the bundled Midnight Aurora preset, without applying yet.
 bash scripts/dream-skin-macos.sh reset-demo
 ```
 
@@ -149,6 +149,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.p
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action install
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action install -NoShortcuts
 
+# Open the system-tray controller for image picking, saving/switching themes, pause, and restore.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action tray
+
 # Start with native restart confirmation; optionally choose port/profile or foreground diagnosis.
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action start -Port 9335
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action start -ProfilePath "C:\path\profile" -ForegroundInjector
@@ -176,7 +179,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.p
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\dream-skin-windows.ps1 -Action test
 ```
 
-The Windows runtime currently provides its bundled decorative theme. Custom image themes are available on macOS only.
+The Windows installer initializes a bundled theme and starts its system-tray controller unless `-NoShortcuts` is used. From the tray, the user can choose a local PNG, JPEG, or WebP background, save the current theme, switch saved themes, pause or resume the skin, reapply it, and fully restore Codex. Images must be no larger than 16 MB and must pass dimension and metadata validation.
 
 ## Verification
 

@@ -3,7 +3,7 @@
 set -euo pipefail
 
 UPSTREAM_REPOSITORY="https://github.com/Fei-Away/Codex-Dream-Skin.git"
-UPSTREAM_COMMIT="26c6c410e0e0bfc053356474620e17f934f483fc"
+UPSTREAM_COMMIT="5fd8af532efbaa87d2d0092297fd2d45cd56574e"
 CACHE_PARENT="${CODEX_DREAM_SKIN_CACHE_DIR:-${HOME}/Library/Caches/CodexDreamSkinSkill}"
 SOURCE_ROOT="${CACHE_PARENT}/source-${UPSTREAM_COMMIT}"
 
@@ -23,7 +23,7 @@ Commands:
   customize [options]            Open the native image picker and prepare a theme
   customize-url URL [options]    Download an HTTPS banner and prepare it without restarting Codex
   customize-file PATH [options]  Prepare a local banner without restarting Codex
-  reset-demo                     Restore the bundled abstract demo without applying it
+  reset-demo                     Select the bundled Midnight Aurora preset without applying it
   library-add-url URL [options]  Add an HTTPS image as a saved theme without applying it
   library-add-file PATH [opts]   Add a local image as a saved theme without applying it
   list-themes                    List saved theme IDs and names
@@ -41,7 +41,7 @@ Commands:
   build-release [--skip-tests]   Build the complete runtime release ZIP
   test                           Run the pinned runtime's static regression suite
 
-The runtime is pinned to commit 26c6c410e0e0bfc053356474620e17f934f483fc.
+The runtime is pinned to commit 5fd8af532efbaa87d2d0092297fd2d45cd56574e.
 EOF
 }
 
@@ -67,6 +67,27 @@ ensure_source() {
   git -C "$SOURCE_ROOT" checkout --quiet --detach "$UPSTREAM_COMMIT"
   actual="$(git -C "$SOURCE_ROOT" rev-parse HEAD)"
   [ "$actual" = "$UPSTREAM_COMMIT" ] || fail "Runtime commit verification failed: $actual"
+
+  installer="$SOURCE_ROOT/macos/scripts/install-dream-skin-macos.sh"
+  default_theme="$SOURCE_ROOT/macos/presets/preset-midnight-aurora/theme.json"
+  [ -s "$default_theme" ] || fail "Pinned runtime is missing its default theme: $default_theme"
+  /usr/bin/grep -Fq 'seed_bundled_presets' "$installer" \
+    || fail "Pinned runtime is missing first-install theme initialization."
+  /usr/bin/grep -Fq 'switch-theme-macos.sh" --id preset-midnight-aurora' "$installer" \
+    || fail "Pinned runtime is missing its first-install default theme selection."
+}
+
+ensure_default_theme() {
+  (
+    . "$SOURCE_ROOT/macos/scripts/common-macos.sh"
+    discover_codex_app
+    require_macos_runtime
+    ensure_state_root
+    seed_bundled_presets
+    if [ ! -f "$THEME_DIR/theme.json" ]; then
+      "$SCRIPT_DIR/switch-theme-macos.sh" --id preset-midnight-aurora --no-apply >/dev/null
+    fi
+  )
 }
 
 installed_script() {
@@ -122,6 +143,7 @@ case "$command_name" in
     ;;
   doctor)
     ensure_source
+    ensure_default_theme
     exec "$SOURCE_ROOT/macos/scripts/doctor-macos.sh" "$@"
     ;;
   install)
@@ -157,8 +179,8 @@ case "$command_name" in
     ;;
   reset-demo)
     [ "$#" -eq 0 ] || fail "The reset-demo command takes no arguments."
-    customizer="$(installed_script customize-theme-macos.sh)"
-    exec "$customizer" --reset-demo --no-apply
+    selector="$(installed_script switch-theme-macos.sh)"
+    exec "$selector" --id preset-midnight-aurora --no-apply
     ;;
   library-add-url)
     [ "$#" -gt 0 ] || fail "library-add-url requires an HTTPS image URL."

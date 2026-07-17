@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
   [Parameter(Mandatory = $true)]
-  [ValidateSet('source', 'install', 'start', 'start-authorized', 'verify', 'restore', 'restore-authorized', 'recover-config', 'uninstall', 'test')]
+  [ValidateSet('source', 'install', 'tray', 'start', 'start-authorized', 'verify', 'restore', 'restore-authorized', 'recover-config', 'uninstall', 'test')]
   [string]$Action,
   [int]$Port = 9335,
   [string]$ScreenshotPath,
@@ -13,7 +13,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $UpstreamRepository = 'https://github.com/Fei-Away/Codex-Dream-Skin.git'
-$UpstreamCommit = '26c6c410e0e0bfc053356474620e17f934f483fc'
+$UpstreamCommit = '5fd8af532efbaa87d2d0092297fd2d45cd56574e'
 $CacheParent = if ($env:CODEX_DREAM_SKIN_CACHE_DIR) {
   $env:CODEX_DREAM_SKIN_CACHE_DIR
 } else {
@@ -71,6 +71,12 @@ switch ($Action) {
     $arguments = @('-Port', $Port)
     if ($NoShortcuts) { $arguments += '-NoShortcuts' }
     Invoke-RuntimeScript 'install-dream-skin.ps1' $arguments
+  }
+  'tray' {
+    $trayScript = Join-Path $SourceRoot 'windows\scripts\tray-dream-skin.ps1'
+    if (-not (Test-Path -LiteralPath $trayScript)) { throw "Runtime script is missing: $trayScript" }
+    & powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File $trayScript -Port $Port
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
   }
   'start' {
     $arguments = @('-Port', $Port, '-PromptRestart')
