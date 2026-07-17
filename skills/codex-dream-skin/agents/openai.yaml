@@ -1,4 +1,4 @@
 interface:
   display_name: "Codex Dream Skin"
   short_description: "One-click Codex themes with safe verify and restore"
-  default_prompt: "Use $codex-dream-skin to install the World Cup theme with one confirmation, then verify it automatically."
+  default_prompt: "Use $codex-dream-skin to let me choose the World Cup theme or my own image, then install and verify it automatically."

@@ -7,7 +7,7 @@ Codex Dream Skin 是一个免费开源的 **Codex App 换肤 Skill**。它可以
 [![Windows](https://img.shields.io/badge/Windows-supported-2563eb)](#支持哪些系统和功能)
 [![License](https://img.shields.io/badge/license-MIT-2563eb)](LICENSE)
 
-## macOS 第一次使用：只复制这一段
+## macOS 第一次使用：复制后选择主题
 
 > 不要下载 ZIP，不要打开终端，不要自己退出或重新打开 Codex。
 
@@ -17,25 +17,32 @@ Codex Dream Skin 是一个免费开源的 **Codex App 换肤 Skill**。它可以
 请安装或覆盖更新这个 GitHub 仓库里的 codex-dream-skin Skill：
 https://github.com/aithink001/Codex-Dream-Skin-Themes/tree/main/skills/codex-dream-skin
 
-安装后请完整读取新版 SKILL.md，并直接执行其中的 Ordinary-user path，为我安装世界杯主题。
+安装后请完整读取新版 SKILL.md，并按 Ordinary-user path 操作。
 
-除“安装世界杯主题”确认弹窗外，不要让我运行任何命令，不要让我手动退出或重新打开 Codex。请自动完成安装、一次受控重启、主题应用和 Verify；只有 Verify 真正通过后才能告诉我成功。
+如果我还没有指定主题，只问我选择哪一种：
+1. 世界杯主题
+2. 使用我自己的图片
+
+我选世界杯主题时，直接执行一键安装流程；我选自己的图片时，等我上传图片或粘贴 HTTPS 图片地址后，再执行自定义图片一键安装流程。
+
+除一次“安装主题”确认弹窗外，不要让我运行任何命令，不要让我手动退出或重新打开 Codex。请自动完成安装、一次受控重启、主题应用和 Verify；只有 Verify 真正通过后才能告诉我成功。
 ```
 
-接下来只做两件事：
+接下来只需要：
 
-1. 看到系统弹窗后，点击 **“安装世界杯主题”**。
-2. 等待 Codex 自动重新打开。不要手动操作。
+1. 回复 **“1”** 使用世界杯主题，或回复 **“2”** 后发送自己的图片。
+2. 看到系统弹窗后，点击安装。
+3. 等待 Codex 自动重新打开，不要手动操作。
 
-世界杯主题会自动使用适合黑金球场画面的深色外观，不受用户当前浅色或深色设置影响，也不会出现整层发白的背景。
+两种方式都会自动使用适合背景图片的沉浸式深色外观，不受用户当前浅色或深色设置影响，也不会出现整层发白的背景。
 
-看到世界杯背景就安装完成了。如果没有变化，不要再次重启，只需要对 Codex 说：
+看到选择的背景，并且 Codex 确认 Verify 通过，才算安装完成。如果没有变化，不要再次重启，只需要对 Codex 说：
 
 ```text
-检查世界杯主题安装结果并自动诊断，不要重启 Codex，也不要让我运行命令。
+检查 Dream Skin 主题安装结果并自动诊断，不要重启 Codex，也不要让我运行命令。
 ```
 
-世界杯主题一键安装目前用于 macOS。Windows 用户请看[Windows 简单用法](#windows使用本地图片和托盘主题控制)。
+主题选择与一键安装目前用于 macOS。Windows 用户请看[Windows 简单用法](#windows使用本地图片和托盘主题控制)。
 
 原生侧栏、项目选择、建议卡片、任务内容和输入框仍然可以正常点击与输入；主题图片只用于 Banner 和装饰背景，不会把一张假界面截图盖在 Codex 上。
 
@@ -43,13 +50,13 @@ https://github.com/aithink001/Codex-Dream-Skin-Themes/tree/main/skills/codex-dre
 
 [![粉系定制 Codex Dream Skin 完整界面效果](https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/pink-custom.jpg)](https://image3.org/zh/codex-dream-skin-generator?theme=pink-custom&utm_source=github&utm_medium=hero&utm_campaign=codex_dream_skin)
 
-[第一次使用](#macos-第一次使用只复制这一段) · [其他主题](#如何给-codex-更换自定义主题) · [功能对比](#支持哪些系统和功能) · [效果预览](#codex-dream-skin-效果预览) · [验证与恢复](#如何验证主题已经生效) · [常见问题](#常见问题)
+[第一次使用](#macos-第一次使用复制后选择主题) · [其他主题](#如何给-codex-更换自定义主题) · [功能对比](#支持哪些系统和功能) · [效果预览](#codex-dream-skin-效果预览) · [验证与恢复](#如何验证主题已经生效) · [常见问题](#常见问题)
 
 ## Codex Dream Skin 下载与安装
 
 ### 推荐：让 Codex 自动安装
 
-直接使用本文最上方的[一键安装提示词](#macos-第一次使用只复制这一段)。Codex 会安装或更新 Skill，并自动完成世界杯主题的应用和验证。
+直接使用本文最上方的[主题选择提示词](#macos-第一次使用复制后选择主题)。Codex 会安装或更新 Skill，再根据你的选择自动完成主题应用和验证。
 
 <details>
 <summary><strong>高级用户：手动安装 Skill</strong></summary>

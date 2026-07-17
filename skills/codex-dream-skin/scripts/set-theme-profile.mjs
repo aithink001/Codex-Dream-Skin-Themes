@@ -2,19 +2,19 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 
-const [requestedThemePath] = process.argv.slice(2);
-if (!requestedThemePath) {
-  throw new Error("Usage: set-world-cup-profile.mjs /absolute/path/to/theme.json");
+const [requestedThemePath, expectedName] = process.argv.slice(2);
+if (!requestedThemePath || !expectedName) {
+  throw new Error("Usage: set-theme-profile.mjs /absolute/path/to/theme.json EXPECTED_NAME");
 }
 
 const themePath = path.resolve(requestedThemePath);
 if (path.basename(themePath) !== "theme.json") {
-  throw new Error("World Cup profile target must be a theme.json file.");
+  throw new Error("Display profile target must be a theme.json file.");
 }
 
 const theme = JSON.parse(await fs.readFile(themePath, "utf8"));
-if (theme.name !== "World Cup Victory Night") {
-  throw new Error("Refusing to change a non-World-Cup theme.");
+if (theme.name !== expectedName) {
+  throw new Error(`Refusing to change unexpected theme “${theme.name || "unnamed"}”.`);
 }
 
 theme.appearance = "dark";
@@ -35,4 +35,4 @@ try {
   await fs.rm(temporary, { force: true }).catch(() => {});
 }
 
-console.log("World Cup display profile locked to dark with the low-scrim safe area.");
+console.log(`Display profile for “${expectedName}” locked to dark with the low-scrim safe area.`);
