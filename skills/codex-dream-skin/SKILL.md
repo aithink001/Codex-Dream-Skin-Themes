@@ -7,11 +7,30 @@ description: Install, customize, launch, hot-switch, pause, inspect, verify, pac
 
 Apply a real renderer skin to the official Codex Desktop app while keeping the native sidebar, project selector, cards, task content, menus, keyboard focus, and composer interactive.
 
+## Ordinary-user path
+
+Do not explain CDP, ports, injectors, process state, or shell commands unless the user explicitly asks for technical details.
+
+When a macOS user asks to install the World Cup theme, run exactly:
+
+```bash
+bash scripts/dream-skin-macos.sh world-cup
+```
+
+Tell the user only to confirm the single native dialog and then wait. The helper owns installation, one controlled Codex restart, theme preparation, launch, and Verify. Never tell the user to quit or reopen Codex manually. After Codex returns, read the result without restarting:
+
+```bash
+bash scripts/dream-skin-macos.sh world-cup-status
+```
+
+Report success only when the result says `status=success` and the live status shows the injector and CDP session. If the user declines the dialog or says not to restart, stop immediately and make no further apply or reload attempt.
+
 ## Safety guarantees
 
 - The platform wrapper downloads a pinned runtime and verifies its exact Git commit before use.
 - Official `Codex.app`, `app.asar`, `WindowsApps`, signatures, accounts, chats, projects, API keys, and model providers remain unchanged.
 - Restart confirmation appears before a running Codex window is closed. Unsaved input may be lost after confirmation.
+- Never substitute a manual quit/reopen for the controlled launcher. A normally reopened Codex has no Dream Skin CDP session.
 - Custom themes use an HTTPS image URL or a local image selected by the user. Full-interface showcase screenshots are visual references, not theme backgrounds.
 - Decorative layers do not receive pointer events, so native controls remain clickable.
 - A theme is considered active only after Verify passes.

@@ -3,9 +3,15 @@
 set -euo pipefail
 
 UPSTREAM_REPOSITORY="https://github.com/Fei-Away/Codex-Dream-Skin.git"
-UPSTREAM_COMMIT="5fd8af532efbaa87d2d0092297fd2d45cd56574e"
+UPSTREAM_COMMIT="a1c48b3a84cc64532196e624fdf33ee1277cb018"
 CACHE_PARENT="${CODEX_DREAM_SKIN_CACHE_DIR:-${HOME}/Library/Caches/CodexDreamSkinSkill}"
 SOURCE_ROOT="${CACHE_PARENT}/source-${UPSTREAM_COMMIT}"
+WRAPPER_PATH="$(cd "$(dirname "$0")" && pwd -P)/$(basename "$0")"
+WORLD_CUP_THEME_URL="https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/themes/world-cup-victory-night.png"
+WORLD_CUP_STATE_ROOT="${HOME}/Library/Application Support/CodexDreamSkinStudio"
+WORLD_CUP_RESULT_PATH="${WORLD_CUP_STATE_ROOT}/world-cup-install-result.txt"
+WORLD_CUP_LOG_PATH="${WORLD_CUP_STATE_ROOT}/world-cup-install.log"
+WORLD_CUP_ERROR_LOG_PATH="${WORLD_CUP_STATE_ROOT}/world-cup-install-error.log"
 
 fail() {
   printf 'Codex Dream Skin Skill: %s\n' "$*" >&2
@@ -17,6 +23,8 @@ usage() {
 Usage: dream-skin-macos.sh <command> [arguments]
 
 Commands:
+  world-cup                     One-click install, apply, and verify the World Cup theme
+  world-cup-status              Read the one-click installation result without restarting
   source                         Download and validate the pinned runtime source
   doctor [--require-live]        Validate Codex, runtime, payload, and optional live session
   install [options]              Install without launching; supports --port/--no-launchers
@@ -41,7 +49,7 @@ Commands:
   build-release [--skip-tests]   Build the complete runtime release ZIP
   test                           Run the pinned runtime's static regression suite
 
-The runtime is pinned to commit 5fd8af532efbaa87d2d0092297fd2d45cd56574e.
+The runtime is pinned to commit a1c48b3a84cc64532196e624fdf33ee1277cb018.
 EOF
 }
 
@@ -130,12 +138,131 @@ download_https_image() {
   [ "$bytes" -le 52428800 ] || fail "The downloaded banner exceeds 50 MB."
 }
 
+write_world_cup_result() {
+  local status="$1"
+  local detail="$2"
+  local screenshot="${3:-}"
+  local temporary
+  /bin/mkdir -p "$WORLD_CUP_STATE_ROOT"
+  /bin/chmod 700 "$WORLD_CUP_STATE_ROOT"
+  temporary="${WORLD_CUP_RESULT_PATH}.tmp.$$"
+  /usr/bin/printf '%s\n' \
+    "status=${status}" \
+    'theme=World Cup Victory Night' \
+    "detail=${detail}" \
+    "screenshot=${screenshot}" \
+    > "$temporary"
+  /bin/chmod 600 "$temporary"
+  /bin/mv -f "$temporary" "$WORLD_CUP_RESULT_PATH"
+}
+
+launch_world_cup_helper() {
+  ensure_source
+  (
+    . "$SOURCE_ROOT/macos/scripts/common-macos.sh"
+    discover_codex_app
+    require_macos_runtime
+    ensure_state_root
+    : > "$WORLD_CUP_LOG_PATH"
+    : > "$WORLD_CUP_ERROR_LOG_PATH"
+    /bin/chmod 600 "$WORLD_CUP_LOG_PATH" "$WORLD_CUP_ERROR_LOG_PATH"
+    "$NODE" -e '
+      const fs = require("node:fs");
+      const { spawn } = require("node:child_process");
+      const [stdoutPath, stderrPath, wrapper] = process.argv.slice(1);
+      const stdout = fs.openSync(stdoutPath, "a");
+      const stderr = fs.openSync(stderrPath, "a");
+      const child = spawn("/bin/bash", [wrapper, "__world-cup-helper"], {
+        detached: true,
+        env: process.env,
+        stdio: ["ignore", stdout, stderr],
+      });
+      fs.closeSync(stdout);
+      fs.closeSync(stderr);
+      child.unref();
+      process.stdout.write(String(child.pid));
+    ' "$WORLD_CUP_LOG_PATH" "$WORLD_CUP_ERROR_LOG_PATH" "$WRAPPER_PATH"
+  )
+}
+
+run_world_cup_helper() {
+  local temporary_image=""
+  local screenshot_path="${HOME}/Desktop/World Cup Victory Night - Verify.png"
+  local install_script customizer starter verifier
+
+  write_world_cup_result running '正在自动安装和应用，请勿手动重新打开 Codex。'
+  world_cup_failed() {
+    local exit_code="$1"
+    local line="$2"
+    [ -z "$temporary_image" ] || /bin/rm -f "$temporary_image"
+    write_world_cup_result failed "安装在第 ${line} 行失败（退出码 ${exit_code}），请读取 world-cup-install-error.log。"
+  }
+  trap 'exit_code=$?; world_cup_failed "$exit_code" "$LINENO"' ERR
+
+  ensure_source
+  (
+    . "$SOURCE_ROOT/macos/scripts/common-macos.sh"
+    discover_codex_app
+    require_macos_runtime
+    ensure_state_root
+    stop_codex true
+  )
+
+  install_script="$SOURCE_ROOT/macos/scripts/install-dream-skin-macos.sh"
+  "$install_script" --no-launch
+
+  temporary_image="$(/usr/bin/mktemp "${TMPDIR:-/tmp}/codex-world-cup.XXXXXX")"
+  download_https_image "$WORLD_CUP_THEME_URL" "$temporary_image"
+  customizer="$(installed_script customize-theme-macos.sh)"
+  "$customizer" --image "$temporary_image" --no-apply \
+    --name 'World Cup Victory Night' \
+    --tagline '冠军之夜，为热爱全力以赴。' \
+    --quote 'PLAY BOLD. BUILD BOLDER.' \
+    --accent '#d7aa42' --secondary '#0b8f62' --highlight '#f6d77a'
+  /bin/rm -f "$temporary_image"
+  temporary_image=""
+
+  starter="$(installed_script start-dream-skin-macos.sh)"
+  "$starter"
+  verifier="$(installed_script verify-dream-skin-macos.sh)"
+  "$verifier" --screenshot "$screenshot_path"
+  write_world_cup_result success '主题已安装、应用并通过 Verify。' "$screenshot_path"
+  trap - ERR
+}
+
 require_macos
 [ "$#" -gt 0 ] || { usage; exit 2; }
 command_name="$1"
 shift
 
 case "$command_name" in
+  world-cup)
+    [ "$#" -eq 0 ] || fail "The world-cup command takes no arguments."
+    /usr/bin/osascript <<'APPLESCRIPT' >/dev/null
+display dialog "将自动关闭并重新打开 Codex 一次，然后安装、应用并验证世界杯主题。整个过程无需手动操作。" buttons {"取消", "安装世界杯主题"} default button "安装世界杯主题" cancel button "取消" with title "Codex Dream Skin"
+APPLESCRIPT
+    write_world_cup_result pending '等待后台接管。'
+    helper_pid="$(launch_world_cup_helper)"
+    case "$helper_pid" in ''|*[!0-9]*) fail "Could not start the one-click theme helper." ;; esac
+    printf '世界杯主题已开始自动安装。Codex 将只重启一次，请不要手动关闭或重新打开。\n'
+    ;;
+  world-cup-status)
+    [ "$#" -eq 0 ] || fail "The world-cup-status command takes no arguments."
+    if [ -f "$WORLD_CUP_RESULT_PATH" ]; then
+      /bin/cat "$WORLD_CUP_RESULT_PATH"
+    else
+      printf 'status=not-started\n'
+    fi
+    status_script="${HOME}/.codex/codex-dream-skin-studio/scripts/status-dream-skin-macos.sh"
+    if [ -x "$status_script" ]; then
+      "$status_script" --json --deep || true
+    fi
+    ;;
+  __world-cup-helper)
+    [ "$#" -eq 0 ] || fail "The internal world-cup helper takes no arguments."
+    /bin/sleep 2
+    run_world_cup_helper
+    ;;
   source)
     [ "$#" -eq 0 ] || fail "The source command takes no arguments."
     ensure_source
