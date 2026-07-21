@@ -175,6 +175,16 @@ Windows 会先安装一套可用的内置主题，并提供系统托盘控制器
       <strong>Stage Black-Gold · 舞台黑金</strong>
     </td>
   </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://codex-theme-gallery.howardhua.chatgpt.site/themes/caishen-lite?utm_source=github&utm_medium=showcase&utm_campaign=codex_dream_skin"><img src="https://codex-theme-gallery.howardhua.chatgpt.site/contrib/aithink001/caishen-lite-readable-banner.png" alt="财神浅色可读版 Codex Dream Skin 主题背景" width="100%"></a><br>
+      <strong>Caishen Lite Readable · 财神浅色可读版</strong>
+    </td>
+    <td width="50%" align="center">
+      <br>
+      <strong>Public-safe 3:1 theme banner · 左侧低细节，右侧主视觉</strong>
+    </td>
+  </tr>
 </table>
 
 **[选择一个风格并生成自己的 Codex Dream Skin Banner](https://image3.org/zh/codex-dream-skin-generator?utm_source=github&utm_medium=showcase_cta&utm_campaign=codex_dream_skin)**
