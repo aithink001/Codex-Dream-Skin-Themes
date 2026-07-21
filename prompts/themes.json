@@ -78,5 +78,15 @@
     "showcase": "https://cdn.nano-banana-2-ai.com/uploads/codex-dream-skin/showcases/stage-black-gold.jpg",
     "prompt": "A premium black-and-gold stage theme banner, editorial portrait of a stylish young male performer on the right, deep matte black, champagne-gold pin lights, flower silhouettes, subtle waveform, satin reflections, luxury concert-poster design, dramatic and restrained. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no small unreadable text, no logos, and no watermark. The image must remain usable when center-cropped.",
     "onlineGenerator": "https://image3.org/codex-dream-skin-generator?theme=stage-black-gold&utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
+  },
+  {
+    "id": "caishen-lite-readable",
+    "name": "Caishen Lite Readable",
+    "nameZh": "财神浅色可读版",
+    "appearance": "light",
+    "showcaseResolution": "2172x724",
+    "showcase": "https://codex-theme-gallery.howardhua.chatgpt.site/contrib/aithink001/caishen-lite-readable-banner.png",
+    "prompt": "A public-safe light fortune coding theme banner, warm cream paper texture, friendly God of Wealth mascot working with a laptop on the right, soft lucky clouds, gold ingots, coral red and warm gold accents, calm mountain silhouettes, low-detail readable space on the left, polished commercial illustration, bright but not harsh. Create a production-ready panoramic 3:1 Codex desktop theme banner. Keep the left side readable for native interface titles and place the main visual focus on the right half. Generate banner artwork only: no fake app chrome, no fake input field, no UI cards, no small unreadable text, no logos, no watermark, and no private workspace screenshots. The image must remain usable when center-cropped.",
+    "onlineGenerator": "https://codex-theme-gallery.howardhua.chatgpt.site/themes/caishen-lite?utm_source=github&utm_medium=prompt_json&utm_campaign=codex_dream_skin"
   }
 ]
